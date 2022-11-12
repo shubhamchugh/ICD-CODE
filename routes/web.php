@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\CheckAvailableRelease;
+use App\Http\Controllers\ICD11\CheckAvailableReleaseController;
+use App\Http\Controllers\ICD11\ICD11RecordsController;
+use App\Http\Controllers\IcdRecordsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +24,5 @@ use App\Http\Controllers\CheckAvailableRelease;
 
 
 Route::get('/',[TestController::class,'test']);
-Route::get('/check_release',[CheckAvailableRelease::class,'check_release']);
+Route::get('/check_release',[CheckAvailableReleaseController::class,'check_release']);
+Route::get('/check_records',[ICD11RecordsController::class,'check_records']);

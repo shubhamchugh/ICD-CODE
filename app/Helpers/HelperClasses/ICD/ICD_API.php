@@ -14,6 +14,7 @@ class ICD_API
 		
 		private $token;
 		private $url;
+        private $lang;
 		private $api_response;
 
 
@@ -52,48 +53,43 @@ class ICD_API
 
     private function makeRequest()
     {
-        $lang = (!empty($lang)) ? $lang : 'en';
+        $this->lang = (!empty($this->lang)) ? $this->lang : 'en';
         $ch = curl_init();
         
         curl_setopt($ch, CURLOPT_URL, $this->url);
         $headers = [
             'accept: application/json',
             'API-Version: v2',
-            'Accept-Language:'. $lang,
+            'Accept-Language:'. $this->lang,
             'Authorization: Bearer  '.$this->token,
         ];
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);			
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // set curl without result echo
         $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);		
         curl_close($ch);
-
         $this->api_response = curl_exec($ch);
-        dd($this->api_response);
         return $http_code;	
     }
 
-    public function get($url) {
+    public function get($url, $lang = Null) {
         
         $this->url = $url;
-
-        $http_code  = $this->makeRequest($this->url);
-
-        if($http_code == 0) { // Api Limit 
-            return "Error with API";
-        }
+        $this->lang = $lang;
+        
+        $http_code  = $this->makeRequest($this->url,$this->lang);
 
         if( $http_code == 401) { // unauthorized token 
             $this->newToken();
-            $this->makeRequest($this->url);
+            $this->makeRequest($this->url, $this->lang);
         }
         
-        return json_decode($this->api_response);
+        return json_decode($this->api_response,true);
     }
 
-    public static function request($url)
+    public static function request($url,$lang = Null)
     {
         $result = new ICD_API();
-        return $result->get($url);
+        return $result->get($url,$lang);
     }
 
 
