@@ -20,10 +20,12 @@ return new class extends Migration
             $table->string('language')->nullable();
             $table->string('linear_url')->nullable();
             $table->string('foundation_url')->nullable();
+            $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->integer('parent_id')->nullable();
             $table->string('category')->nullable();
             $table->string('browserUrl')->nullable();
+            $table->string('is_scraped')->default('pending');
             $table->softDeletes();
             $table->timestamps();
         });
