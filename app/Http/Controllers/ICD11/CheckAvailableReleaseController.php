@@ -25,7 +25,7 @@ class CheckAvailableReleaseController extends Controller
     foreach ($release as $value) {
       $release_data =   ICD_API::request($value['release']);
   
-      icd_11_release::where('release',$value['release'])
+      $release = icd_11_release::where('release',$value['release'])
       ->update([
                   'releaseDate' => $release_data['releaseDate'],
                   'lang' => $release_data['availableLanguages'],
@@ -35,5 +35,7 @@ class CheckAvailableReleaseController extends Controller
 
     icd_11_release::where('release', '!=' ,Str::replace('http://', 'https://', $icd_get['latestRelease']))->update(['latestRelease' => 'Old']);
     icd_11_release::where('release', '=' ,Str::replace('http://', 'https://', $icd_get['latestRelease']))->update(['latestRelease' => 'Latest']);
+
+    return "Release Added With Latest Tag";
 }
 }

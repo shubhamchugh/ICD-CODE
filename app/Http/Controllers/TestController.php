@@ -14,6 +14,6 @@ class TestController extends Controller
 {
     public function test()
     {
-		return ICD_API::request('https://id.who.int/icd/release/11/mms/1435254666');
+		return "OK";
 	}
 }
