@@ -6,6 +6,7 @@ use App\Http\Controllers\CheckAvailableRelease;
 use App\Http\Controllers\ICD11\BookCheckController;
 use App\Http\Controllers\ICD11\CheckAvailableReleaseController;
 use App\Http\Controllers\ICD11\ICD11RecordsController;
+use App\Http\Controllers\ICD11\InfoStoreController;
 use App\Http\Controllers\ICD11\RecordCheckController;
 use App\Http\Controllers\IcdRecordsController;
 
@@ -26,6 +27,7 @@ use App\Http\Controllers\IcdRecordsController;
 
 
 Route::get('/',[TestController::class,'test']);
-Route::get('/check_release',[CheckAvailableReleaseController::class,'CheckRelease']);
-Route::get('/check_book',[BookCheckController::class,'CheckBook']);
-Route::get('/check_records',[RecordCheckController::class,'RecordCheck']);
+Route::get('check_release',[CheckAvailableReleaseController::class,'CheckRelease']);
+Route::get('check_book',[BookCheckController::class,'CheckBook']);
+Route::get('check_records',[RecordCheckController::class,'RecordCheck']);
+Route::get('store_info',[InfoStoreController::class,'InfoStore']);

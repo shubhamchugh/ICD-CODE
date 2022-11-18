@@ -29,7 +29,6 @@ class BookCheckController extends Controller
                 'language' => $icd_records['title']['@language'],
                 'browserUrl' => $icd_records['browserUrl'],
                 'parent_id' => '0',
-                'classKind' => 'Book',
                 'releaseDate' => $icd_records['releaseDate'],
                 'linear_url' => http_to_https($release->release),
             ]);
