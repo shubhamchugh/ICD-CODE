@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Storage;
 
 class TestController extends Controller
 {
-    public function test()
+    public function home()
     {
-		return "OK";
-	}
+		return view('themes.default.content.home');
+	  }
 }

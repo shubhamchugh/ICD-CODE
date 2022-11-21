@@ -26,7 +26,7 @@ use App\Http\Controllers\IcdRecordsController;
 // });
 
 
-Route::get('/',[TestController::class,'test']);
+Route::get('/',[TestController::class,'home']);
 Route::get('check_release',[CheckAvailableReleaseController::class,'CheckRelease']);
 Route::get('check_book',[BookCheckController::class,'CheckBook']);
 Route::get('check_records',[RecordCheckController::class,'RecordCheck']);
