@@ -34,8 +34,22 @@
             </div>
         </div>
     </form>
+    <hr class="my-4 mx-auto h-1 bg-gray-400 rounded border-0 lg:my-8 dark:bg-gray-700">
+    <h1 class="text-3xl">ICD-11 FREE MEDICAL CODING REFERENCE 2022 - 2023</h1>
+    
+    <p class="py-2">ICD List is a reference website of ICD-10-CM and ICD-10-PCS codes, related medical coding guidelines and billing information. Our ICD-10 data is updated with the latest 96,400+ ICD-10-CM codes and the 79,300+ ICD-10 procedure codes from the Centers for Medicare and Medicaid Services (CMS).</p>
+
+<p class="py-2">ICD-10 information is easily accessible with our powerful search tools, code converters, browsable indexes, tables and medical coding guides.</p>
+
+<p class="py-2">Our knowledge graph includes helpful medical coding information like Code Edits, Code first, with, or also, Inclusion and Exclusion terms, Diagnostic Related Groups (DRG), Present on Admission Exempt (POA), Synonyms, Table of Drugs, Table of Neoplasms, Quality Payment Program Measures and Information for Patients.</p>
+
+<hr class="my-4 mx-auto h-1 bg-gray-400 rounded border-0 lg:my-8 dark:bg-gray-700">
 
 
+<span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
+@foreach ($book as $book_name)
+      <li class="">{{ $book_name->title }} - Release: {{ $book_name->releaseId }}</li>
+@endforeach
 
 <!-- FAQ Section: Simple -->
 <div class="bg-white">
