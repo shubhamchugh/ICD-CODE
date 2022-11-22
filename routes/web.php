@@ -10,6 +10,7 @@ use App\Http\Controllers\ICD11\ICD11RecordsController;
 use App\Http\Controllers\ICD11\InfoStoreController;
 use App\Http\Controllers\ICD11\RecordCheckController;
 use App\Http\Controllers\IcdRecordsController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,15 @@ use App\Http\Controllers\IcdRecordsController;
 // });
 
 
-Route::get('/',[HomePageController::class,'home']);
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+	Route::get('/',[HomePageController::class,'home']);
+});
+
+
+
+
 Route::get('check_release',[CheckAvailableReleaseController::class,'CheckRelease']);
 Route::get('check_book',[BookCheckController::class,'CheckBook']);
 Route::get('check_records',[RecordCheckController::class,'RecordCheck']);

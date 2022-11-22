@@ -1,6 +1,5 @@
 @extends('themes.default.layouts.master')
 @section('content')
-
 <div class="container xl:max-w-7xl mx-auto px-4 py-8">
 
  <!--SEARCH BAR -->
@@ -47,8 +46,10 @@
 
 
 <span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
-@foreach ($book as $book_name)
-      <li class="">{{ $book_name->title }} - Release: {{ $book_name->releaseId }}</li>
+@foreach ($release as $releaseDetails)
+<li class="">Release: {{ $releaseDetails->releaseId }} Lang: @foreach (json_decode($releaseDetails->lang,true) as $lang)
+<a href="{{ route('', []) }}">{{ $lang }}</a>  
+@endforeach</li>
 @endforeach
 
 <!-- FAQ Section: Simple -->
