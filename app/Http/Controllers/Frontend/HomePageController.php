@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
-    public function home()
+    public function index()
     {
-        $release = icd_11_release::get();
+        $lang = tongue()->current();
+        $release = icd_11_release::where('lang','LIKE',"%{$lang}%")->get();
         
         return view('themes.default.content.home',[
            'release' => $release

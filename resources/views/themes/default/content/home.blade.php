@@ -46,9 +46,7 @@
 
 <span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
 @foreach ($release as $releaseDetails)
-<li class="">Release: {{ $releaseDetails->releaseId }} Lang: @foreach (json_decode($releaseDetails->lang,true) as $lang)
-<a href="{{ route('', []) }}">{{ $lang }}</a>  
-@endforeach</li>
+<li class=""><a href="{{  route('release.index',['release' => $releaseDetails->releaseId]) }}">Release: {{ $releaseDetails->releaseId }} | Version: {{ $releaseDetails->latestRelease }}</a></li>
 @endforeach
 
 <!-- FAQ Section: Simple -->
