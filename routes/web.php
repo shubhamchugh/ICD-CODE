@@ -27,13 +27,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 //     return view('welcome');
 // });
 
-
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
-{
-	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-	Route::get('/',[HomePageController::class,'home']);
-});
-
+Route::get('/',[HomePageController::class,'home']);
 
 
 
