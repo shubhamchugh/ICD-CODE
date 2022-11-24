@@ -36,6 +36,14 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
         });
+
+
+        // This will guess a locale from the current HTTP request
+        // and set the application locale.
+      tongue()->detect();
+      
+      //If you use Carbon you can set the Locale right here.
+      \Carbon\Carbon::setLocale(tongue()->current()); 
     }
 
     /**

@@ -27,9 +27,14 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 //     return view('welcome');
 // });
 
-Route::get('/',[HomePageController::class,'home']);
 
 
+ // With the localize middleware, this route cannot be reached without language subdomain
+ Route::group([ 'middleware' => [ 'speaks-tongue' ]], function() {
+  
+	Route::get('/',[HomePageController::class,'home']);
+
+});
 
 Route::get('check_release',[CheckAvailableReleaseController::class,'CheckRelease']);
 Route::get('check_book',[BookCheckController::class,'CheckBook']);
