@@ -11,13 +11,13 @@ use App\Helpers\HelperClasses\ICD\ICD_API;
 class CheckAvailableReleaseController extends Controller
 {
     public function CheckRelease()
-   {
+    {
     $icd_get =  ICD_API::request('https://id.who.int/icd/release/11/mms');
 
-    foreach ($icd_get['release'] as $release) {
-        icd_11_release::firstOrCreate([
-            'release' => http_to_https($release),
-        ]);
+        foreach ($icd_get['release'] as $release) {
+            icd_11_release::firstOrCreate([
+                'release' => http_to_https($release),
+            ]);
     }
 
     $release = icd_11_release::select('release')->get();

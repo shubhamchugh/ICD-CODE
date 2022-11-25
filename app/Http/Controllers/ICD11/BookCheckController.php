@@ -24,11 +24,13 @@ class BookCheckController extends Controller
         $icd_records =  ICD_API::request($release->release,$lang_value);
 
         Icd11Records::firstOrCreate([
+                'slug' => 'book-'.$icd_records['title']['@language'].'-'.$icd_records['releaseId'],
                 'title' => $icd_records['title']['@value'],
                 'releaseId' => $icd_records['releaseId'],
                 'language' => $icd_records['title']['@language'],
                 'browserUrl' => $icd_records['browserUrl'],
                 'parent_id' => '0',
+                'classKind' => 'Book',
                 'releaseDate' => $icd_records['releaseDate'],
                 'linear_url' => http_to_https($release->release),
             ]);

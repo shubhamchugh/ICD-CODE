@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\CheckAvailableRelease;
 use App\Http\Controllers\Frontend\HomePageController;
-use App\Http\Controllers\Frontend\ReleasePageController;
+use App\Http\Controllers\Frontend\ICD11\BlockPageController;
+use App\Http\Controllers\Frontend\ICD11\ChapterPageController;
+use App\Http\Controllers\Frontend\ICD11\PostPageController;
+use App\Http\Controllers\Frontend\ICD11\ReleasePageController;
 use App\Http\Controllers\ICD11\BookCheckController;
 use App\Http\Controllers\ICD11\CheckAvailableReleaseController;
 use App\Http\Controllers\ICD11\ICD11RecordsController;
@@ -30,11 +33,12 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 
- // With the localize middleware, this route cannot be reached without language subdomain
- Route::group([ 'middleware' => [ 'speaks-tongue' ]], function() {
-  
+// With the localize middleware, this route cannot be reached without language subdomain
+Route::group([ 'middleware' => [ 'speaks-tongue' ]], function() {
 	Route::get('/',[HomePageController::class,'index'])->name('home.index');
-	Route::get('{release}',[ReleasePageController::class,'index'])->name('release.index');
+	Route::get('release/{release}',[ReleasePageController::class,'index'])->name('release.index');
+	Route::get('release/{release}/chapter/{parent_id}',[ChapterPageController::class,'index'])->name('chapter.index');
+	Route::get('{release}/block/{chapter_code}',[BlockPageController::class,'index'])->name('block.index');
 });
 
 Route::get('check_release',[CheckAvailableReleaseController::class,'CheckRelease']);

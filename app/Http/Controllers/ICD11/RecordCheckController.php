@@ -24,6 +24,7 @@ class RecordCheckController extends Controller
             if (!empty($record_detail['child'])) {
                 foreach ($record_detail['child'] as $record_child) {
                     Icd11Records::firstOrCreate([
+                        'slug' => $record->language.'-'.$record->releaseId.'-'.$record_child,
                         'language' => $record->language,
                         'parent_id' => $record->id,
                         'releaseId' => $record->releaseId,
