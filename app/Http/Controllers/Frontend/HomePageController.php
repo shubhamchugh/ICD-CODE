@@ -12,14 +12,28 @@ class HomePageController extends Controller
 {
     public function index()
     {
+        
         $lang = tongue()->current();
         $release = icd_11_release::where('lang','LIKE',"%{$lang}%")->get();
 
         SEOTools::setTitle('Home Package');
-        SEOTools::setDescription('This is my page description from pakage');
+        SEOTools::setDescription('This is my page description from Package');
         
-        return view('themes.default.content.home',[
-           'release' => $release
+        if ($release->isEmpty()) {
+        $currentDomain = request()->server('SERVER_NAME');
+        return "No Data Found Please Get some data From API: $currentDomain/check_release";
+        } 
+        
+        foreach ($release as  $release_data) {
+        $availableRelease['book'][] =  Icd11Records::where('releaseId', $release_data->releaseId)
+            ->where('language',tongue()->current())
+            ->where('parent_id',0)
+            ->get();
+            $availableRelease['releaseType'][] = $release_data->latestRelease;
+        }
+
+        return view('themes.default.pages.content.home',[
+           'availableRelease' => $availableRelease,
         ]);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ICD11;
+namespace App\Http\Controllers\GetData\ICD11;
 
 use App\Helpers\HelperClasses\ICD\ICD_API;
 use App\Http\Controllers\Controller;
@@ -20,11 +20,15 @@ class RecordCheckController extends Controller
         $record = Icd11Records::where('is_scraped', 'pending')->first();
 
         if (!empty($record)) {
+
+            $record->update([
+                'is_scraped' => 'record_info_scrape_start'
+            ]);
+
             $record_detail = ICD_API::request($record->linear_url, $record->language);
             if (!empty($record_detail['child'])) {
                 foreach ($record_detail['child'] as $record_child) {
                     Icd11Records::firstOrCreate([
-                        'slug' => $record->language.'-'.$record->releaseId.'-'.$record_child,
                         'language' => $record->language,
                         'parent_id' => $record->id,
                         'releaseId' => $record->releaseId,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ICD11;
+namespace App\Http\Controllers\GetData\ICD11;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;

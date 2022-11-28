@@ -16,15 +16,18 @@ class BookCheckController extends Controller
 
        if (!empty($release)) {
 
+        $release->update([
+            'is_scraped' => 'scraping_start'
+           ]);
+
         echo "New Book Found Added to Database<br>";
 
-    $lang =  json_decode($release->lang, true);
+        $lang =  json_decode($release->lang, true);
         foreach ($lang as $lang_value) {
         
         $icd_records =  ICD_API::request($release->release,$lang_value);
 
         Icd11Records::firstOrCreate([
-                'slug' => 'book-'.$icd_records['title']['@language'].'-'.$icd_records['releaseId'],
                 'title' => $icd_records['title']['@value'],
                 'releaseId' => $icd_records['releaseId'],
                 'language' => $icd_records['title']['@language'],

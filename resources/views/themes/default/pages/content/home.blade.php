@@ -1,4 +1,5 @@
-@extends('themes.default.layouts.master')
+@extends('themes.default.pages.layouts.master')
+
 @section('content')
 <div class="container xl:max-w-7xl mx-auto px-4 py-8">
 <!--SEARCH BAR -->
@@ -44,9 +45,11 @@
 <hr class="my-4 mx-auto h-1 bg-gray-400 rounded border-0 lg:my-8 dark:bg-gray-700">
 
 
-<span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
-@foreach ($release as $releaseDetails)
-<li class=""><a href="{{  route('release.index',['release' => $releaseDetails->releaseId]) }}">Release: {{ $releaseDetails->releaseId }} | Version: {{ $releaseDetails->latestRelease }}</a></li>
+<span class="text-xl font-bold">Browse ICD-11-CM Codes List</span>
+@foreach ($availableRelease['book'] as $key => $releaseDetails)
+@foreach ($releaseDetails as $releaseDetails_get)
+          <li class=""><a href="{{  route('code.index',['releaseId' => $releaseDetails_get->releaseId]) }}">{{ $releaseDetails_get->title }} | Release:{{ $releaseDetails_get->releaseId }} | Version: {{ $availableRelease['releaseType'][$key] }}</a></li>
+@endforeach
 @endforeach
 
 <!-- FAQ Section: Simple -->

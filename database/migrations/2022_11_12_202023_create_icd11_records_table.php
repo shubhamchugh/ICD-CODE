@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('icd11_records', function (Blueprint $table) {
             $table->id();
-            $table->text('slug')->unique();
-            $table->text('liner_id_code')->nullable();
-            $table->text('liner_id_residual')->nullable();
+            $table->string('liner_id')->nullable();
+            $table->string('liner_id_code')->nullable();
+            $table->string('liner_id_residual')->nullable();
             $table->string('code')->nullable();
             $table->string('blockId')->nullable();
             $table->string('codeRange')->nullable();
@@ -43,7 +43,7 @@ return new class extends Migration
             $table->text('ancestor')->nullable();
             $table->text('descendant')->nullable();
             $table->text('foundationChildElsewhere')->nullable();
-            $table->text('indexTerm')->nullable();
+            $table->mediumText('indexTerm')->nullable();
             $table->text('inclusion')->nullable();
             $table->text('exclusion')->nullable();
             $table->text('postcoordinationScale')->nullable();
@@ -51,6 +51,9 @@ return new class extends Migration
             $table->string('is_scraped')->default('pending');
             $table->softDeletes();
             $table->timestamps();
+
+
+           $table->unique(['liner_id','releaseId','language']);
         });
     }
 
