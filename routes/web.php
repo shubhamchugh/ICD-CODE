@@ -1,14 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomePageController;
-use App\Http\Controllers\Frontend\ICD11\CodePageController;
-use App\Http\Controllers\Frontend\ICD11\ReleasePageController;
-use App\Http\Controllers\GetData\ICD11\BookCheckController;
-use App\Http\Controllers\GetData\ICD11\CheckAvailableReleaseController;
-use App\Http\Controllers\GetData\ICD11\InfoStoreController;
-use App\Http\Controllers\GetData\ICD11\RecordCheckController;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\Frontend\ICD11\Icd11ChapterPageController;
+use App\Http\Controllers\Frontend\ICD11\Icd11CodePageController;
+use App\Http\Controllers\GetData\ICD11\Icd11BookStoreController;
+use App\Http\Controllers\GetData\ICD11\Icd11InfoStoreController;
+use App\Http\Controllers\GetData\ICD11\Icd11RecordStoreController;
+use App\Http\Controllers\GetData\ICD11\Icd11StoreAvailableReleaseController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,15 +20,24 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-Route::get('check_release',[CheckAvailableReleaseController::class,'CheckRelease']);
-Route::get('check_book',[BookCheckController::class,'CheckBook']);
-Route::get('check_records',[RecordCheckController::class,'RecordCheck']);
-Route::get('store_info',[InfoStoreController::class,'InfoStore']);
+/******************************
+ * ICD 11 DATA STORE FROM API *
+ ******************************/
+Route::get('icd_11_store_release',[Icd11StoreAvailableReleaseController::class,'StoreRelease']);
+Route::get('icd_11_store_book',[Icd11BookStoreController::class,'StoreBook']);
+Route::get('icd_11_store_records',[Icd11RecordStoreController::class,'RecordStore']);
+Route::get('icd_11_store_info',[Icd11InfoStoreController::class,'InfoStore']);
+
+/******************************
+ * ICD 10 DATA STORE FORM API *
+******************************/
+
+
 
 
 // With the localize middleware, this route cannot be reached without language subdomain
 Route::group([ 'middleware' => [ 'speaks-tongue' ]], function() {
 	Route::get('/',[HomePageController::class,'index'])->name('home.index');
-	Route::get('release/{release}',[ReleasePageController::class,'index'])->name('release.index');
-	Route::get('{releaseId}/{liner_id?}',[CodePageController::class,'index'])->name('code.index');
+	Route::get('release/{release}',[Icd11ChapterPageController::class,'index'])->name('release.index');
+	Route::get('{releaseId}/{liner_id?}',[Icd11CodePageController::class,'index'])->name('code.index');
 });

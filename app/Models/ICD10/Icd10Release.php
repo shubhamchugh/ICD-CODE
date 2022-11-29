@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\ICD10;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Icd11Records extends Model
+class Icd10Release extends Model
 {
     use HasFactory;
-    
-    protected $guarded = ['id'];
 }

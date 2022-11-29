@@ -6,29 +6,30 @@ use App\Helpers\HelperClasses\ICD\ICD_API;
 use App\Http\Controllers\Controller;
 use App\Models\Exclusion;
 use App\Models\FoundationChildElsewhere;
-use App\Models\Icd11Records;
+use App\Models\ICD11\Icd11Record;
 use Illuminate\Http\Request;
 
-class RecordCheckController extends Controller
+
+class Icd11RecordStoreController extends Controller
 {
-    public function RecordCheck()
+    public function RecordStore()
     {
 
         /**************************************
          * BLOCK & CHAPTERS RECORD STORE ONLY *
         **************************************/
-        $record = Icd11Records::where('is_scraped', 'pending')->first();
+        $record = Icd11Record::where('is_fetch', 'pending')->first();
 
         if (!empty($record)) {
 
             $record->update([
-                'is_scraped' => 'record_info_scrape_start'
+                'is_fetch' => 'record_info_scrape_start'
             ]);
 
             $record_detail = ICD_API::request($record->linear_url, $record->language);
             if (!empty($record_detail['child'])) {
                 foreach ($record_detail['child'] as $record_child) {
-                    Icd11Records::firstOrCreate([
+                    Icd11Record::firstOrCreate([
                         'language' => $record->language,
                         'parent_id' => $record->id,
                         'releaseId' => $record->releaseId,
@@ -38,7 +39,7 @@ class RecordCheckController extends Controller
                 }
             }
             $record->update([
-                'is_scraped' => 'record_fetch_done'
+                'is_fetch' => 'record_fetch_done'
             ]);
         } else {
             echo "No Record Found for Store any child";

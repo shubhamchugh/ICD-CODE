@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Frontend\ICD11;
 
 use App\Http\Controllers\Controller;
-use App\Models\Icd11Records;
+use App\Models\ICD11\Icd11Record;
 use Illuminate\Http\Request;
 use Artesaos\SEOTools\Facades\SEOTools;
 
-class ReleasePageController extends Controller
+class Icd11ChapterPageController extends Controller
 {
     public function index($release)
     {
-        $availableRecords =  Icd11Records::where('releaseId',$release)
+        $availableRecords =  Icd11Record::where('releaseId',$release)
         ->where('language',tongue()->current())
         ->where('parent_id',0)
         ->get();
@@ -40,7 +40,7 @@ class ReleasePageController extends Controller
 
     public function list($release,$parent_id)
     {
-        $availableRecords =  Icd11Records::where('releaseId',$release)
+        $availableRecords =  Icd11Record::where('releaseId',$release)
         ->where('language',tongue()->current())
         ->where('parent_id',$parent_id)
         ->get();
@@ -65,6 +65,4 @@ class ReleasePageController extends Controller
             'availableRecords' => $availableRecords
         ]);
     }
-
-
 }

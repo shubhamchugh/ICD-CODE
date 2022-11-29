@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\icd_11_release;
+use App\Models\ICD11\Icd11Release;
 use Illuminate\Support\Str;
 
 function http_to_https($url)
@@ -9,9 +9,9 @@ function http_to_https($url)
 }
 
 
-function lang_available($releaseId)
+function icd_11_lang_available($releaseId)
 {
-   $release_lang = icd_11_release::where('releaseId',$releaseId)->first();
+   $release_lang = Icd11Release::where('releaseId',$releaseId)->first();
 
    if (empty($release_lang)) {
       $lang_available['releaseId'] = $releaseId;

@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\ICD11;
+namespace App\Http\Controllers\GetData\ICD11;
 
 use App\Helpers\HelperClasses\ICD\ICD_API;
 use App\Http\Controllers\Controller;
-use App\Models\Icd11Records;
-use App\Models\icd_11_release;
+use App\Models\ICD11\Icd11Record;
+use App\Models\ICD11\Icd11Release;
 use Illuminate\Http\Request;
 
-class BookCheckController extends Controller
+class Icd11BookStoreController extends Controller
 {
-    public function CheckBook()
+    public function StoreBook()
     {
-       $release =  icd_11_release::where('is_scraped','pending')->first();
+       $release =  Icd11Release::where('is_fetch','pending')->first();
 
        if (!empty($release)) {
 
         $release->update([
-            'is_scraped' => 'scraping_start'
+            'is_fetch' => 'scraping_start'
            ]);
 
         echo "New Book Found Added to Database<br>";
@@ -27,7 +27,7 @@ class BookCheckController extends Controller
         
         $icd_records =  ICD_API::request($release->release,$lang_value);
 
-        Icd11Records::firstOrCreate([
+        Icd11Record::firstOrCreate([
                 'title' => $icd_records['title']['@value'],
                 'releaseId' => $icd_records['releaseId'],
                 'language' => $icd_records['title']['@language'],
@@ -40,7 +40,7 @@ class BookCheckController extends Controller
        }
 
        $release->update([
-        'is_scraped' => 'done'
+        'is_fetch' => 'done'
        ]);
        }else {
         echo "No New Book Found<br>";

@@ -4,28 +4,28 @@ namespace App\Http\Controllers\GetData\ICD11;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\icd_11_release;
 use App\Http\Controllers\Controller;
 use App\Helpers\HelperClasses\ICD\ICD_API;
+use App\Models\ICD11\Icd11Release;
 
-class CheckAvailableReleaseController extends Controller
+class Icd11StoreAvailableReleaseController extends Controller
 {
-    public function CheckRelease()
+    public function StoreRelease()
     {
     $icd_get =  ICD_API::request('https://id.who.int/icd/release/11/mms');
 
         foreach ($icd_get['release'] as $release) {
-            icd_11_release::firstOrCreate([
+            Icd11Release::firstOrCreate([
                 'release' => http_to_https($release),
             ]);
     }
 
-    $release = icd_11_release::select('release')->get();
+    $release = Icd11Release::select('release')->get();
 
     foreach ($release as $value) {
       $release_data =   ICD_API::request($value['release']);
   
-      $release = icd_11_release::where('release',$value['release'])
+      $release = Icd11Release::where('release',$value['release'])
       ->update([
                   'releaseDate' => $release_data['releaseDate'],
                   'lang' => $release_data['availableLanguages'],
@@ -33,8 +33,8 @@ class CheckAvailableReleaseController extends Controller
       ]);
     }
 
-    icd_11_release::where('release', '!=' ,Str::replace('http://', 'https://', $icd_get['latestRelease']))->update(['latestRelease' => 'Old']);
-    icd_11_release::where('release', '=' ,Str::replace('http://', 'https://', $icd_get['latestRelease']))->update(['latestRelease' => 'Latest']);
+    Icd11Release::where('release', '!=' ,Str::replace('http://', 'https://', $icd_get['latestRelease']))->update(['latestRelease' => 'Old']);
+    Icd11Release::where('release', '=' ,Str::replace('http://', 'https://', $icd_get['latestRelease']))->update(['latestRelease' => 'Latest']);
 
     return "Release Added With Latest Tag";
 }

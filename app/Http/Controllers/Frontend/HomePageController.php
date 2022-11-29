@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\ICD11\Icd11Record;
+use App\Models\ICD11\Icd11Release;
 use App\Models\Icd11Records;
-use App\Models\icd_11_release;
 use Illuminate\Http\Request;
 use Artesaos\SEOTools\Facades\SEOTools;
 
@@ -14,7 +15,7 @@ class HomePageController extends Controller
     {
         
         $lang = tongue()->current();
-        $release = icd_11_release::where('lang','LIKE',"%{$lang}%")->get();
+        $release = Icd11Release::where('lang','LIKE',"%{$lang}%")->get();
 
         SEOTools::setTitle('Home Package');
         SEOTools::setDescription('This is my page description from Package');
@@ -25,7 +26,7 @@ class HomePageController extends Controller
         } 
         
         foreach ($release as  $release_data) {
-        $availableRelease['book'][] =  Icd11Records::where('releaseId', $release_data->releaseId)
+        $availableRelease['book'][] =  Icd11Record::where('releaseId', $release_data->releaseId)
             ->where('language',tongue()->current())
             ->where('parent_id',0)
             ->get();

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('icd_11_releases', function (Blueprint $table) {
+        Schema::create('icd10_releases', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
             $table->string('description')->nullable();
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icd_11_releases');
+        Schema::dropIfExists('icd10_releases');
     }
 };

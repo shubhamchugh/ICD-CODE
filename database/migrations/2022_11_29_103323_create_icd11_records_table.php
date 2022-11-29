@@ -48,12 +48,12 @@ return new class extends Migration
             $table->text('exclusion')->nullable();
             $table->text('postcoordinationScale')->nullable();
             $table->text('api_data')->nullable();
-            $table->string('is_scraped')->default('pending');
+            $table->string('is_fetch')->default('pending');
             $table->softDeletes();
             $table->timestamps();
 
 
-           $table->unique(['liner_id','releaseId','language']);
+            $table->unique(['liner_id','releaseId','language']);
         });
     }
 

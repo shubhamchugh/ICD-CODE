@@ -4,21 +4,21 @@ namespace App\Http\Controllers\GetData\ICD11;
 
 use App\Helpers\HelperClasses\ICD\ICD_API;
 use App\Http\Controllers\Controller;
-use App\Models\Icd11Records;
+use App\Models\ICD11\Icd11Record;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class InfoStoreController extends Controller
+class Icd11InfoStoreController extends Controller
 {
     public function InfoStore()
     {
-        $record =  Icd11Records::where('is_scraped','record_fetch_done')->first();
+        $record =  Icd11Record::where('is_fetch','record_fetch_done')->first();
         if (empty($record)) {
             return "No Record Found to store Info";
         }
 
         // $record->update([
-        //     'is_scraped' => 'record_info_scrape_start'
+        //     'is_fetch' => 'record_info_scrape_start'
         // ]);
         
         $record_info = ICD_API::request($record->linear_url, $record->language);
@@ -69,7 +69,7 @@ class InfoStoreController extends Controller
             'postcoordinationScale' => (!empty($record_info['postcoordinationScale'])) ? $record_info['postcoordinationScale'] : null,
             'browserUrl' => $record_info['browserUrl'],
             'api_data' =>  $record_info,
-            'is_scraped' => 'record_info_done'
+            'is_fetch' => 'record_info_done'
         ]);
     }
 }

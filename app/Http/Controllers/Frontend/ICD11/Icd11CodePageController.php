@@ -3,25 +3,24 @@
 namespace App\Http\Controllers\Frontend\ICD11;
 
 use App\Http\Controllers\Controller;
-use App\Models\Icd11Records;
-use App\Models\icd_11_release;
+use App\Models\ICD11\Icd11Record;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
 
-class CodePageController extends Controller
+class Icd11CodePageController extends Controller
 {
     public function index(Request $request)
     {
         $releaseId = $request->releaseId;
         $liner_id = $request->liner_id;
 
-        $lang_available = lang_available($releaseId);
+        $lang_available = icd_11_lang_available($releaseId);
 
         if (!empty($lang_available['status']) == 404 ) {
             return abort($lang_available['status'],'releaseId'.$releaseId.'Not Found in our database');
         }
         
-        $availableRecords =  Icd11Records::where('language',tongue()->current())
+        $availableRecords =  Icd11Record::where('language',tongue()->current())
         ->when($releaseId,function ($query, $releaseId) {
             return $query->where('releaseId', $releaseId);
         })
@@ -42,7 +41,7 @@ class CodePageController extends Controller
             ]), 404);
         }
 
-        $child = Icd11Records::where('parent_id',$availableRecords->id)
+        $child = Icd11Record::where('parent_id',$availableRecords->id)
         ->where('language',tongue()->current())
         ->get();
 
