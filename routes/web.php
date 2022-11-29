@@ -3,6 +3,8 @@
 use App\Http\Controllers\Frontend\HomePageController;
 use App\Http\Controllers\Frontend\ICD11\Icd11ChapterPageController;
 use App\Http\Controllers\Frontend\ICD11\Icd11CodePageController;
+use App\Http\Controllers\GetData\ICD10\Icd10BookStoreController;
+use App\Http\Controllers\GetData\ICD10\Icd10StoreAvailableReleaseController;
 use App\Http\Controllers\GetData\ICD11\Icd11BookStoreController;
 use App\Http\Controllers\GetData\ICD11\Icd11InfoStoreController;
 use App\Http\Controllers\GetData\ICD11\Icd11RecordStoreController;
@@ -31,6 +33,8 @@ Route::get('icd_11_store_info',[Icd11InfoStoreController::class,'InfoStore']);
 /******************************
  * ICD 10 DATA STORE FORM API *
 ******************************/
+Route::get('icd_10_store_release',[Icd10StoreAvailableReleaseController::class,'StoreRelease']);
+Route::get('icd_10_store_book',[Icd10BookStoreController::class,'StoreBook']);
 
 
 

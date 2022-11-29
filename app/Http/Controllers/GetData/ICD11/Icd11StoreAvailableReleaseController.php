@@ -10,9 +10,11 @@ use App\Models\ICD11\Icd11Release;
 
 class Icd11StoreAvailableReleaseController extends Controller
 {
+    const ICD11RELEASE_URI  = 'https://id.who.int/icd/release/11/mms';
+
     public function StoreRelease()
     {
-    $icd_get =  ICD_API::request('https://id.who.int/icd/release/11/mms');
+    $icd_get =  ICD_API::request(Self::ICD11RELEASE_URI);
 
         foreach ($icd_get['release'] as $release) {
             Icd11Release::firstOrCreate([

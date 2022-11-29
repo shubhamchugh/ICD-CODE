@@ -12,13 +12,13 @@ class Icd11BookStoreController extends Controller
 {
     public function StoreBook()
     {
-       $release =  Icd11Release::where('is_fetch','pending')->first();
+        $release =  Icd11Release::where('is_fetch','pending')->first();
 
-       if (!empty($release)) {
+    if (!empty($release)) {
 
         $release->update([
             'is_fetch' => 'scraping_start'
-           ]);
+        ]);
 
         echo "New Book Found Added to Database<br>";
 
