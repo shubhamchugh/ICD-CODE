@@ -13,20 +13,16 @@ class Icd11InfoStoreController extends Controller
     public function InfoStore()
     {
         $record =  Icd11Record::where('is_fetch','record_fetch_done')->first();
+       
         if (empty($record)) {
             return "No Record Found to store Info";
         }
 
-        // $record->update([
-        //     'is_fetch' => 'record_info_scrape_start'
-        // ]);
+        $record->update([
+            'is_fetch' => 'record_info_fetch_start'
+        ]);
         
         $record_info = ICD_API::request($record->linear_url, $record->language);
-        
-        if ((!empty($record_info['classKind'])) == 'category') {
-            $record_info['classKind'] = 'code';
-        }
-        
         
         $liner_id = str::remove('https://id.who.int/icd/release/11/'.$record->releaseId.'/mms',$record->linear_url);
         
@@ -69,7 +65,7 @@ class Icd11InfoStoreController extends Controller
             'postcoordinationScale' => (!empty($record_info['postcoordinationScale'])) ? $record_info['postcoordinationScale'] : null,
             'browserUrl' => $record_info['browserUrl'],
             'api_data' =>  $record_info,
-            'is_fetch' => 'record_info_done'
+            'is_fetch' => 'record_info_store'
         ]);
     }
 }

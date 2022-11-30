@@ -4,6 +4,8 @@ use App\Http\Controllers\Frontend\HomePageController;
 use App\Http\Controllers\Frontend\ICD11\Icd11ChapterPageController;
 use App\Http\Controllers\Frontend\ICD11\Icd11CodePageController;
 use App\Http\Controllers\GetData\ICD10\Icd10BookStoreController;
+use App\Http\Controllers\GetData\ICD10\ICD10InfoStoreController;
+use App\Http\Controllers\GetData\ICD10\ICD10RecordStoreController;
 use App\Http\Controllers\GetData\ICD10\Icd10StoreAvailableReleaseController;
 use App\Http\Controllers\GetData\ICD11\Icd11BookStoreController;
 use App\Http\Controllers\GetData\ICD11\Icd11InfoStoreController;
@@ -27,7 +29,7 @@ use Illuminate\Support\Facades\Route;
  ******************************/
 Route::get('icd_11_store_release',[Icd11StoreAvailableReleaseController::class,'StoreRelease']);
 Route::get('icd_11_store_book',[Icd11BookStoreController::class,'StoreBook']);
-Route::get('icd_11_store_records',[Icd11RecordStoreController::class,'RecordStore']);
+Route::get('icd_11_store_record',[Icd11RecordStoreController::class,'RecordStore']);
 Route::get('icd_11_store_info',[Icd11InfoStoreController::class,'InfoStore']);
 
 /******************************
@@ -35,9 +37,8 @@ Route::get('icd_11_store_info',[Icd11InfoStoreController::class,'InfoStore']);
 ******************************/
 Route::get('icd_10_store_release',[Icd10StoreAvailableReleaseController::class,'StoreRelease']);
 Route::get('icd_10_store_book',[Icd10BookStoreController::class,'StoreBook']);
-
-
-
+Route::get('icd_10_store_record',[ICD10RecordStoreController::class,'RecordStore']);
+Route::get('icd_10_store_info',[ICD10InfoStoreController::class,'InfoStore']);
 
 // With the localize middleware, this route cannot be reached without language subdomain
 Route::group([ 'middleware' => [ 'speaks-tongue' ]], function() {

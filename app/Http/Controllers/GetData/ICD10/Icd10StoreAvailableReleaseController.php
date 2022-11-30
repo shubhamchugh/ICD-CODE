@@ -16,7 +16,7 @@ class Icd10StoreAvailableReleaseController extends Controller
     {
     
         $ICD10_ReleaseDetails =  ICD_API::request(Self::ICD10RELEASE_URI);
-        
+
         foreach ($ICD10_ReleaseDetails['release'] as $release) {
             Icd10Release::firstOrCreate([
                 'lang' => $ICD10_ReleaseDetails['title']['@language'],
