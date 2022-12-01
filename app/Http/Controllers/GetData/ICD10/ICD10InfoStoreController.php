@@ -11,7 +11,7 @@ class ICD10InfoStoreController extends Controller
 {
     public function InfoStore()
     {
-        $record =   Icd10Record::where('is_fetch', 'pending')->first();
+        $record =   Icd10Record::where('is_fetch', 'record_record_store')->first();
 
         if (empty($record)) {
             return "No Record Found to store Info";

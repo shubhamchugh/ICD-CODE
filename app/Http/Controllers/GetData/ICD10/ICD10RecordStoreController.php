@@ -38,7 +38,7 @@ class ICD10RecordStoreController extends Controller
 
         if (!empty($record)) {
             $record->update([
-                'is_fetch' => 'record_info_store'
+                'is_fetch' => 'record_record_store'
             ]);
         }
     }

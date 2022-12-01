@@ -22,7 +22,7 @@ class HomePageController extends Controller
         
         if ($release->isEmpty()) {
         $currentDomain = request()->server('SERVER_NAME');
-        return "No Data Found Please Get some data From API: $currentDomain/check_release";
+        return "No Data Found Please Get some data From API: $currentDomain/icd_11_store_release";
         } 
         
         foreach ($release as  $release_data) {
