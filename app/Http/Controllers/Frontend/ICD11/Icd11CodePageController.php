@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ICD11\Icd11Record;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class Icd11CodePageController extends Controller
 {
@@ -14,13 +15,13 @@ class Icd11CodePageController extends Controller
         $releaseId = $request->releaseId;
         $liner_id = $request->liner_id;
 
-        $lang_available = icd_11_lang_available($releaseId);
+        // $lang_available = icd_11_lang_available($releaseId);
 
-        if (!empty($lang_available['status']) == 404 ) {
-            return abort($lang_available['status'],'releaseId'.$releaseId.'Not Found in our database');
-        }
+        // if (!empty($lang_available['status']) == 404 ) {
+        //     return abort($lang_available['status'],'releaseId'.$releaseId.'Not Found in our database');
+        // }
         
-        $availableRecords =  Icd11Record::where('language',tongue()->current())
+        $availableRecords =  Icd11Record::where('language',LaravelLocalization::getCurrentLocale() )
         ->when($releaseId,function ($query, $releaseId) {
             return $query->where('releaseId', $releaseId);
         })
@@ -31,7 +32,7 @@ class Icd11CodePageController extends Controller
         //Record Not Found
         if (empty($availableRecords)) {
 
-            $error = 'ICD CODE NOT FOUND OR VALID FOR Language: '. tongue()->current();
+            $error = 'ICD CODE NOT FOUND OR VALID FOR Language: '. LaravelLocalization::getCurrentLocale();
 
             SEOTools::setTitle($error);
             SEOTools::setDescription($error);
@@ -42,7 +43,7 @@ class Icd11CodePageController extends Controller
         }
 
         $child = Icd11Record::where('parent_id',$availableRecords->id)
-        ->where('language',tongue()->current())
+        ->where('language',LaravelLocalization::getCurrentLocale())
         ->get();
 
         SEOTools::setTitle('ICD CODE LIST');
@@ -50,7 +51,7 @@ class Icd11CodePageController extends Controller
 
         return view('themes.default.ICD11.content.code',[
             'child' => $child,
-            'lang_available' => $lang_available,
+            // 'lang_available' => $lang_available,
         ]);
     }
 }

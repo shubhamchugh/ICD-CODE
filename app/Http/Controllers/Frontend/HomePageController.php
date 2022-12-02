@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\ICD10\Icd10Record;
-use App\Models\ICD10\Icd10Release;
-use App\Models\ICD11\Icd11Record;
-use App\Models\ICD11\Icd11Release;
 use Illuminate\Http\Request;
+use App\Models\ICD10\Icd10Record;
+use App\Models\ICD11\Icd11Record;
+use App\Models\ICD10\Icd10Release;
+use App\Models\ICD11\Icd11Release;
+use App\Http\Controllers\Controller;
 use Artesaos\SEOTools\Facades\SEOTools;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class HomePageController extends Controller
 {
@@ -17,9 +18,10 @@ class HomePageController extends Controller
         $icd_11_availableRelease = false;
         $icd_10_availableRelease = false;
 
-        $lang = tongue()->current();
-        $icd_11_release = Icd11Release::where('lang','LIKE',"%{$lang}%")->get();
-        $icd_10_release = Icd10Release::where('lang','LIKE',"%{$lang}%")->get();
+        $currentLocale = LaravelLocalization::getCurrentLocale();
+    
+        $icd_11_release = Icd11Release::where('lang','LIKE',"%{$currentLocale}%")->get();
+        $icd_10_release = Icd10Release::where('lang','LIKE',"%{$currentLocale}%")->get();
   
         $currentDomain = request()->server('SERVER_NAME');
 
@@ -29,7 +31,7 @@ class HomePageController extends Controller
         if (!$icd_11_release->isEmpty()) {
             foreach ($icd_11_release as  $icd_11_release_data) {
                 $icd_11_availableRelease['book'][] =  Icd11Record::where('releaseId', $icd_11_release_data->releaseId)
-                    ->where('language',tongue()->current())
+                    ->where('language',$currentLocale)
                     ->where('parent_id',null)
                     ->get();
                     $icd_11_availableRelease['releaseType'][] = $icd_11_release_data->latestRelease;
@@ -39,7 +41,7 @@ class HomePageController extends Controller
         if (!$icd_10_release->isEmpty()) {
             foreach ($icd_10_release as $icd_10_release_data) {
                 $icd_10_availableRelease['book'][] =  Icd10Record::where('releaseId', $icd_10_release_data->releaseId)
-                ->where('language',tongue()->current())
+                ->where('language',$currentLocale)
                 ->where('parent_id',null)
                 ->get();
                 $icd_10_availableRelease['releaseType'][] = $icd_10_release_data->latestRelease;
