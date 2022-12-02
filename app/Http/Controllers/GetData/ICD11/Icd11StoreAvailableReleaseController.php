@@ -26,12 +26,12 @@ class Icd11StoreAvailableReleaseController extends Controller
 
     foreach ($release as $value) {
       $release_data =   ICD_API::request($value['release']);
-  
+
       $release = Icd11Release::where('release',$value['release'])
       ->update([
                   'releaseDate' => $release_data['releaseDate'],
                   'lang' => $release_data['availableLanguages'],
-                  'releaseId' => $release_data['releaseId']
+                  'releaseId' => explode('-',$release_data['releaseId'])[0],
       ]);
     }
 

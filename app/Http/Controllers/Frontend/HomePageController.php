@@ -13,17 +13,24 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class HomePageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $icd_11_availableRelease = false;
-        $icd_10_availableRelease = false;
-
+        $icd_11_availableRelease = [];
+        $icd_10_availableRelease = [];
+        $releaseId = $request->releaseId;
         $currentLocale = LaravelLocalization::getCurrentLocale();
     
-        $icd_11_release = Icd11Release::where('lang','LIKE',"%{$currentLocale}%")->get();
-        $icd_10_release = Icd10Release::where('lang','LIKE',"%{$currentLocale}%")->get();
-  
-        $currentDomain = request()->server('SERVER_NAME');
+        $icd_11_release = Icd11Release::where('lang','LIKE',"%{$currentLocale}%")
+        ->when($releaseId,function ($query, $releaseId) {
+            return $query->where('releaseId', $releaseId);
+        })
+        ->get();
+        $icd_10_release = Icd10Release::where('lang','LIKE',"%{$currentLocale}%")
+        ->when($releaseId,function ($query, $releaseId) {
+            return $query->where('releaseId', $releaseId);
+        })
+        ->get();
+
 
         SEOTools::setTitle('Home Package');
         SEOTools::setDescription('This is my page description from Package');

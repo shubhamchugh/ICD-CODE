@@ -41,29 +41,28 @@ Route::get('icd_10_store_book',[Icd10BookStoreController::class,'StoreBook']);
 Route::get('icd_10_store_record',[ICD10RecordStoreController::class,'RecordStore']);
 Route::get('icd_10_store_info',[ICD10InfoStoreController::class,'InfoStore']);
 
-Route::get('/',[HomePageController::class,'index'])->name('home.index');
+
+
+Route::group([
+	'domain' => request()->server('SERVER_NAME'),
+	'prefix' => LaravelLocalization::setLocale(),
+	'middleware' => [ 'localeCookieRedirect','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+	], function() {
+	Route::get('/',[HomePageController::class,'index'])->name('home.index');
+});
+
+Route::domain('{releaseId}.'.request()->server('SERVER_NAME'))->group(function () {
+	Route::get('icd10/{code?}',[ICD10CodePageController::class,'index'])->name('icd10.code.index');
+});
 
 // With the localize middleware, this route cannot be reached without language subdomain
 Route::group([
 	'domain' => '{releaseId}.'.request()->server('SERVER_NAME'),
 	'prefix' => LaravelLocalization::setLocale(),
+	'middleware' => [ 'localeCookieRedirect','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 	], function() {
+		Route::get('/',[HomePageController::class,'index']);
 	Route::get('icd11/{liner_id?}',[Icd11CodePageController::class,'index'])->name('icd11.code.index');
 });
 
 
-// Route::get('/',[HomePageController::class,'index'])->name('home.index');
-
-// Route::group(
-// 	[
-// 		'domain' => LaravelLocalization::setLocale().'{releaseId}.'.request()->server('SERVER_NAME'),
-// 	], function()
-// {
-// 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-	
-// 	Route::get('icd11/{liner_id?}',[Icd11CodePageController::class,'index'])->name('icd11.code.index');
-// });
-
-Route::domain('{releaseId}.'.request()->server('SERVER_NAME'))->group(function () {
-	Route::get('icd10/{code?}',[ICD10CodePageController::class,'index'])->name('icd10.code.index');
-});

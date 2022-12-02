@@ -2,6 +2,7 @@
 
 use App\Models\ICD11\Icd11Release;
 use Illuminate\Support\Str;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 function http_to_https($url)
 {
@@ -24,9 +25,9 @@ function icd_11_lang_available($releaseId)
    
    foreach ($release_lang as $value) 
    {
-       if (array_key_exists($value, tongue()->speaking()->all())) 
+       if (array_key_exists($value, LaravelLocalization::getSupportedLocales())) 
        {
-           $main_lang = tongue()->speaking()->all();
+           $main_lang = LaravelLocalization::getSupportedLocales();
            $lang_available[$value] = $main_lang[$value];
        }
    }

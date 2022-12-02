@@ -15,11 +15,10 @@ class Icd11CodePageController extends Controller
         $releaseId = $request->releaseId;
         $liner_id = $request->liner_id;
 
-        // $lang_available = icd_11_lang_available($releaseId);
-
-        // if (!empty($lang_available['status']) == 404 ) {
-        //     return abort($lang_available['status'],'releaseId'.$releaseId.'Not Found in our database');
-        // }
+        $lang_available = icd_11_lang_available($releaseId);
+        if (!empty($lang_available['status']) == 404 ) {
+            return abort($lang_available['status'],'releaseId'.$releaseId.'Not Found in our database');
+        }
         
         $availableRecords =  Icd11Record::where('language',LaravelLocalization::getCurrentLocale() )
         ->when($releaseId,function ($query, $releaseId) {
@@ -51,7 +50,7 @@ class Icd11CodePageController extends Controller
 
         return view('themes.default.ICD11.content.code',[
             'child' => $child,
-            // 'lang_available' => $lang_available,
+            'lang_available' => $lang_available,
         ]);
     }
 }

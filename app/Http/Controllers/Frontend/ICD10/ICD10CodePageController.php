@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ICD10\Icd10Record;
 use Illuminate\Http\Request;
 use Artesaos\SEOTools\Facades\SEOTools;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class ICD10CodePageController extends Controller
 {
@@ -14,7 +15,7 @@ class ICD10CodePageController extends Controller
     $releaseId = $request->releaseId;
     $code = $request->code;
 
-    $availableRecords =  Icd10Record::where('language',tongue()->current())
+    $availableRecords =  Icd10Record::where('language',LaravelLocalization::getCurrentLocale())
         ->when($releaseId,function ($query, $releaseId) {
             return $query->where('releaseId', $releaseId);
         })
@@ -26,7 +27,7 @@ class ICD10CodePageController extends Controller
          //Record Not Found
          if (empty($availableRecords)) {
 
-            $error = 'ICD CODE NOT FOUND OR VALID FOR Language: '. tongue()->current();
+            $error = 'ICD CODE NOT FOUND OR VALID FOR Language: '. LaravelLocalization::getCurrentLocale();
 
             SEOTools::setTitle($error);
             SEOTools::setDescription($error);
@@ -37,7 +38,7 @@ class ICD10CodePageController extends Controller
         }
 
         $child = Icd10Record::where('parent_id',$availableRecords->id)
-        ->where('language',tongue()->current())
+        ->where('language',LaravelLocalization::getCurrentLocale())
         ->get();
 
         SEOTools::setTitle('ICD CODE LIST');
