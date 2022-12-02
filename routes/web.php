@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\HomePageController;
-use App\Http\Controllers\Frontend\ICD11\Icd11ChapterPageController;
+use App\Http\Controllers\Frontend\ICD10\ICD10CodePageController;
 use App\Http\Controllers\Frontend\ICD11\Icd11CodePageController;
 use App\Http\Controllers\GetData\ICD10\Icd10BookStoreController;
 use App\Http\Controllers\GetData\ICD10\ICD10InfoStoreController;
@@ -41,8 +41,13 @@ Route::get('icd_10_store_record',[ICD10RecordStoreController::class,'RecordStore
 Route::get('icd_10_store_info',[ICD10InfoStoreController::class,'InfoStore']);
 
 // With the localize middleware, this route cannot be reached without language subdomain
-Route::group([ 'middleware' => [ 'speaks-tongue' ]], function() {
+Route::group([
+	'middleware' => [ 'speaks-tongue' ],
+	], function() {
 	Route::get('/',[HomePageController::class,'index'])->name('home.index');
-	Route::get('release/{release}',[Icd11ChapterPageController::class,'index'])->name('release.index');
-	Route::get('{releaseId}/{liner_id?}',[Icd11CodePageController::class,'index'])->name('code.index');
+	Route::get('icd11/{releaseId}/{liner_id?}',[Icd11CodePageController::class,'index'])->name('icd11.code.index');
+});
+
+Route::domain('{releaseId}.'.request()->server('SERVER_NAME'))->group(function () {
+	Route::get('icd10/{code?}',[ICD10CodePageController::class,'index'])->name('icd10.code.index');
 });

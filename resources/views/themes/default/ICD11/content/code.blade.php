@@ -3,7 +3,7 @@
 <div class="container xl:max-w-7xl mx-auto px-4 py-8">
     @foreach ($child as $record)
 
-    <li><a href="{{ route('code.index',[
+    <li><a href="{{ route('icd11.code.index',[
         'releaseId'=> $record->releaseId,
         'liner_id' => $record->liner_id
         ]) }}">

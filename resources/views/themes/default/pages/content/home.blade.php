@@ -44,13 +44,26 @@
 
 <hr class="my-4 mx-auto h-1 bg-gray-400 rounded border-0 lg:my-8 dark:bg-gray-700">
 
-
+@if ($icd_11_availableRelease)
 <span class="text-xl font-bold">Browse ICD-11-CM Codes List</span>
-@foreach ($availableRelease['book'] as $key => $releaseDetails)
-@foreach ($releaseDetails as $releaseDetails_get)
-          <li class=""><a href="{{  route('code.index',['releaseId' => $releaseDetails_get->releaseId]) }}">{{ $releaseDetails_get->title }} | Release:{{ $releaseDetails_get->releaseId }} | Version: {{ $availableRelease['releaseType'][$key] }}</a></li>
+@foreach ($icd_11_availableRelease['book'] as $key => $icd_11_availableRelease_data)
+@foreach ($icd_11_availableRelease_data as $icd_11_availableRelease_data_get)
+          <li class=""><a href="{{  route('icd11.code.index',['releaseId' => $icd_11_availableRelease_data_get->releaseId]) }}">{{ $icd_11_availableRelease_data_get->title }} | Release:{{ $icd_11_availableRelease_data_get->releaseId }} | Version: {{ $icd_11_availableRelease['releaseType'][$key] }}</a></li>
 @endforeach
 @endforeach
+@endif
+
+
+@if ($icd_10_availableRelease)
+<span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
+@foreach ($icd_10_availableRelease['book'] as $key => $icd_10_availableRelease_data)
+@foreach ($icd_10_availableRelease_data as $icd_10_availableRelease_data_get)
+          <li class=""><a href="{{  route('icd10.code.index',['releaseId' => $icd_10_availableRelease_data_get->releaseId]) }}">{{ $icd_10_availableRelease_data_get->title }} | Release:{{ $icd_10_availableRelease_data_get->releaseId }} | Version: {{ $icd_10_availableRelease['releaseType'][$key] }}</a></li>
+@endforeach
+@endforeach  
+@endif
+
+
 
 <!-- FAQ Section: Simple -->
 <div class="bg-white">

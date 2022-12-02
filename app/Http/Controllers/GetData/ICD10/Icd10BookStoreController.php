@@ -18,19 +18,24 @@ class Icd10BookStoreController extends Controller
             return "All books details are fetched";
         }
 
-        $BookDetails = ICD_API::request($release->release);
+        $release->update([
+            'is_fetch' => 'fetch_start'
+        ]);
 
-        foreach ($BookDetails['child']  as $chapters) {
-            Icd10Record::firstOrCreate([
-                'linear_url' => http_to_https($chapters),
-                'language' => $release->lang,
-                'releaseDate' => $BookDetails['releaseDate'],
-                'releaseId' => $release['releaseId'],
-                'browserUrl' => $BookDetails['browserUrl'],
-                'parent_id' => '0',
-            ]);
-        }
+        echo "New Book Found Added to Database<br>";
 
+        $icd_records = ICD_API::request($release->release);
+
+        Icd10Record::firstOrCreate([
+            'title' => $icd_records['title']['@value'],
+            'linear_url' => http_to_https($release->release),
+            'language' => $release->lang,
+            'releaseDate' => $icd_records['releaseDate'],
+            'releaseId' => $release['releaseId'],
+            'browserUrl' => $icd_records['browserUrl'],
+            'parent_id' => null,
+        ]);
+    
         $release->update([
             'is_fetch' => 'done',
         ]);

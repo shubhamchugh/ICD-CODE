@@ -14,38 +14,35 @@ class Icd11BookStoreController extends Controller
     {
         $release =  Icd11Release::where('is_fetch','pending')->first();
 
-    if (!empty($release)) {
+    if (empty($release)) {
+        return "All books details are fetched";
+    }
+
+    $release->update([
+        'is_fetch' => 'fetch_start'
+    ]);
+
+    echo "New Book Found Added to Database<br>";
+
+    $lang =  json_decode($release->lang, true);
+    foreach ($lang as $lang_value) {
+    
+    $icd_records =  ICD_API::request($release->release,$lang_value);
+
+    Icd11Record::firstOrCreate([
+            'title' => $icd_records['title']['@value'],
+            'releaseId' => $icd_records['releaseId'],
+            'language' => $icd_records['title']['@language'],
+            'browserUrl' => $icd_records['browserUrl'],
+            'parent_id' => null,
+            'classKind' => 'Book',
+            'releaseDate' => $icd_records['releaseDate'],
+            'linear_url' => http_to_https($release->release),
+        ]);
+   }
 
         $release->update([
-            'is_fetch' => 'scraping_start'
+            'is_fetch' => 'done'
         ]);
-
-        echo "New Book Found Added to Database<br>";
-
-        $lang =  json_decode($release->lang, true);
-        foreach ($lang as $lang_value) {
-        
-        $icd_records =  ICD_API::request($release->release,$lang_value);
-
-        Icd11Record::firstOrCreate([
-                'title' => $icd_records['title']['@value'],
-                'releaseId' => $icd_records['releaseId'],
-                'language' => $icd_records['title']['@language'],
-                'browserUrl' => $icd_records['browserUrl'],
-                'parent_id' => '0',
-                'classKind' => 'Book',
-                'releaseDate' => $icd_records['releaseDate'],
-                'linear_url' => http_to_https($release->release),
-            ]);
-       }
-
-       $release->update([
-        'is_fetch' => 'done'
-       ]);
-       }else {
-        echo "No New Book Found<br>";
-       } 
-
-      
-    }
+   }
 }

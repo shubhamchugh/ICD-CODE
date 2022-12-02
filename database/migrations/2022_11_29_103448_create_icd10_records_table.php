@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('icd10_records', function (Blueprint $table) {
             $table->id();
-            $table->integer('parent_id')->nullable();
+            $table->bigInteger('parent_id')->unsigned()->nullable();
             $table->string('code')->nullable();
             $table->string('classKind')->nullable();
             $table->string('releaseDate')->nullable();
@@ -39,6 +39,10 @@ return new class extends Migration
             $table->string('is_fetch')->default('pending');
             $table->softDeletes();
             $table->timestamps();
+
+            $table->unique(['code','releaseId','language']);
+
+            $table->foreign('parent_id')->references('id')->on('icd10_records')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

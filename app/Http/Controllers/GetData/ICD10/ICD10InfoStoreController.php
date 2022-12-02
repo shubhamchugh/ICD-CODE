@@ -34,11 +34,13 @@ class ICD10InfoStoreController extends Controller
         $indexTerm = (!empty($record_info['indexTerm'])) ? $record_info['indexTerm'] : null;
         $inclusion = (!empty($record_info['inclusion'])) ? $record_info['inclusion'] : null;
         $parent = (!empty($record_info['parent'])) ? $record_info['parent'] : null;
+        $classKind = (!empty($record_info['classKind'])) ? $record_info['classKind'] : Null;
+        $code = (!empty($record_info['code'])) ? $record_info['code'] : Null;
 
         $record->update([
-            'classKind' => $record_info['classKind'],
+            'classKind' => $classKind,
             'browserUrl' => $record_info['browserUrl'],
-            'code' => $record_info['code'],
+            'code' => $code,
             'title' => $record_info['title']['@value'],
             'definition' => $definition,
             'exclusion' => $exclusion,
