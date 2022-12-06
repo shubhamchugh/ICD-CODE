@@ -13,37 +13,37 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('icd10_records', function (Blueprint $table) {
+        Schema::create('icd10_cm_xml_records', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('parent_id')->unsigned()->nullable();
             $table->string('releaseYear')->nullable();
             $table->string('code')->nullable();
+            $table->string('chapter_code')->nullable();
+            $table->string('section_code')->nullable();
+            $table->string('branch_code')->nullable();
+            $table->string('leaf_code')->nullable();
+            $table->string('sub_leaf_code')->nullable();
             $table->string('classKind')->nullable();
             $table->string('releaseDate')->nullable();
             $table->string('releaseId')->nullable();
             $table->string('language')->nullable();
-            $table->string('linear_url',1000)->nullable();
             $table->string('title',1000)->nullable();
             $table->text('definition')->nullable();
-            $table->text('longDefinition')->nullable();
-            $table->text('fullySpecifiedName')->nullable();
-            $table->text('note')->nullable();
+            $table->text('notes')->nullable();
             $table->text('codingHint')->nullable();
-            $table->text('inclusion')->nullable();
-            $table->text('exclusion')->nullable();
-            $table->text('exclusion2')->nullable();
-            $table->text('additionalCode')->nullable();
+            $table->text('includes')->nullable();
+            $table->text('excludes1')->nullable();
+            $table->text('excludes2')->nullable();
+            $table->text('useAdditionalCode')->nullable();
+            $table->text('inclusionTerm')->nullable();
+            $table->text('codeFirst')->nullable();
             $table->text('codeAlso')->nullable();
-            $table->text('parent')->nullable();
-            $table->string('browserUrl',1000)->nullable();
-            $table->text('api_data')->nullable();
-            $table->string('is_fetch')->default('pending');
+            $table->text('clinicalInformation')->nullable();
             $table->softDeletes();
             $table->timestamps();
 
-            $table->unique(['code','releaseId','language']);
-
-            $table->foreign('parent_id')->references('id')->on('icd10_records')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('parent_id')->references('id')->on('icd10_cm_xml_records')->onDelete('cascade')->onUpdate('cascade');
+        
         });
     }
 
@@ -54,6 +54,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icd10_records');
+        Schema::dropIfExists('icd10_cm_xml_records');
     }
 };

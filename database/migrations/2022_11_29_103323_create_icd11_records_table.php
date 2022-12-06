@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('icd11_records', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('parent_id')->unsigned()->nullable();
+            $table->string('releaseYear')->nullable();
             $table->string('liner_id')->nullable();
             $table->string('liner_id_code')->nullable();
             $table->string('liner_id_residual')->nullable();

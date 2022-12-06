@@ -32,6 +32,7 @@ class Icd10BookStoreController extends Controller
             'language' => $release->lang,
             'releaseDate' => $icd_records['releaseDate'],
             'releaseId' => $release['releaseId'],
+            'releaseYear' => $release->releaseYear,
             'browserUrl' => $icd_records['browserUrl'],
             'parent_id' => null,
         ]);

@@ -12,17 +12,17 @@ class Icd11CodePageController extends Controller
 {
     public function index(Request $request)
     {
-        $releaseId = $request->releaseId;
+        $releaseYear = $request->releaseYear;
         $liner_id = $request->liner_id;
 
-        $lang_available = icd_11_lang_available($releaseId);
+        $lang_available = icd_11_lang_available($releaseYear);
         if (!empty($lang_available['status']) == 404 ) {
             return abort($lang_available['status'],'releaseId'.$releaseId.'Not Found in our database');
         }
         
         $availableRecords =  Icd11Record::where('language',LaravelLocalization::getCurrentLocale() )
-        ->when($releaseId,function ($query, $releaseId) {
-            return $query->where('releaseId', $releaseId);
+        ->when($releaseYear,function ($query, $releaseYear) {
+            return $query->where('releaseYear', $releaseYear);
         })
         ->when($liner_id,function ($query, $liner_id) {
             return $query->where('liner_id', $liner_id);

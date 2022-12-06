@@ -12,12 +12,12 @@ class ICD10CodePageController extends Controller
 {
   public function index(Request $request)
   {
-    $releaseId = $request->releaseId;
+    $releaseYear = $request->releaseYear;
     $code = $request->code;
 
     $availableRecords =  Icd10Record::where('language',LaravelLocalization::getCurrentLocale())
-        ->when($releaseId,function ($query, $releaseId) {
-            return $query->where('releaseId', $releaseId);
+        ->when($releaseYear,function ($query, $releaseYear) {
+            return $query->where('releaseYear', $releaseYear);
         })
         ->when($code,function ($query, $code) {
             return $query->where('code', $code);

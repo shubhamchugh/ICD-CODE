@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('icd10_releases', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
+            $table->string('releaseYear')->nullable();
             $table->string('releaseId')->nullable();
             $table->string('lang')->nullable();
             $table->string('release')->nullable();

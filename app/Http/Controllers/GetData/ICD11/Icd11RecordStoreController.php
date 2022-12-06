@@ -33,6 +33,7 @@ class Icd11RecordStoreController extends Controller
                         'language' => $record->language,
                         'parent_id' => $record->id,
                         'releaseId' => $record->releaseId,
+                        'releaseYear' => $record->releaseYear,
                         'releaseDate' => $record->releaseDate,
                         'linear_url' => http_to_https($record_child),
                     ]);

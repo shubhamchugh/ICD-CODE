@@ -31,7 +31,8 @@ class Icd11StoreAvailableReleaseController extends Controller
       ->update([
                   'releaseDate' => $release_data['releaseDate'],
                   'lang' => $release_data['availableLanguages'],
-                  'releaseId' => explode('-',$release_data['releaseId'])[0],
+                  'releaseYear' => explode('-',$release_data['releaseId'])[0],
+                  'releaseId' => $release_data['releaseId']
       ]);
     }
 

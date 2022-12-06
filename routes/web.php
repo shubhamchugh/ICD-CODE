@@ -7,6 +7,8 @@ use App\Http\Controllers\GetData\ICD10\Icd10BookStoreController;
 use App\Http\Controllers\GetData\ICD10\ICD10InfoStoreController;
 use App\Http\Controllers\GetData\ICD10\ICD10RecordStoreController;
 use App\Http\Controllers\GetData\ICD10\Icd10StoreAvailableReleaseController;
+use App\Http\Controllers\GetData\ICD10XML\ICD10CmXmlInfoStoreController;
+use App\Http\Controllers\GetData\ICD10XML\TestController;
 use App\Http\Controllers\GetData\ICD11\Icd11BookStoreController;
 use App\Http\Controllers\GetData\ICD11\Icd11InfoStoreController;
 use App\Http\Controllers\GetData\ICD11\Icd11RecordStoreController;
@@ -24,6 +26,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+// Route::get('test',[TestController::class,'index']);
 
 /******************************
  * ICD 11 DATA STORE FROM API *
@@ -43,6 +48,13 @@ Route::get('icd_10_store_info',[ICD10InfoStoreController::class,'InfoStore']);
 
 
 
+/******************************************
+ * ICD 10 CM XML DATA STORE FROM XML FILE *
+ ******************************************/
+
+Route::get('icd_10_cm_xml_store_info',[ICD10CmXmlInfoStoreController::class,'index']);
+
+
 Route::group([
 	'domain' => request()->server('SERVER_NAME'),
 	'prefix' => LaravelLocalization::setLocale(),
@@ -51,14 +63,15 @@ Route::group([
 	Route::get('/',[HomePageController::class,'index'])->name('home.index');
 });
 
-Route::domain('{releaseId}.'.request()->server('SERVER_NAME'))->group(function () {
+Route::domain('{releaseYear}.'.request()->server('SERVER_NAME'))->group(function () {
 	Route::get('icd10/{code?}',[ICD10CodePageController::class,'index'])->name('icd10.code.index');
 });
 
 // With the localize middleware, this route cannot be reached without language subdomain
 Route::group([
-	'domain' => '{releaseId}.'.request()->server('SERVER_NAME'),
+	'domain' => '{releaseYear}.'.request()->server('SERVER_NAME'),
 	'prefix' => LaravelLocalization::setLocale(),
+	'where' => ['releaseYear' => '2022|2021|2020|2019|2018|2019|2016|2010|2008'],
 	'middleware' => [ 'localeCookieRedirect','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 	], function() {
 		Route::get('/',[HomePageController::class,'index']);

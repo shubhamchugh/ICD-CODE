@@ -22,6 +22,7 @@ class Icd10StoreAvailableReleaseController extends Controller
                 'lang' => $ICD10_ReleaseDetails['title']['@language'],
                 'title' => $ICD10_ReleaseDetails['title']['@value'],
                 'release' => http_to_https($release),
+                'releaseYear' => Str::replace('http://id.who.int/icd/release/10/','',$release),
                 'releaseId' => Str::replace('http://id.who.int/icd/release/10/','',$release),
             ]);    
         }

@@ -32,6 +32,7 @@ class Icd11BookStoreController extends Controller
     Icd11Record::firstOrCreate([
             'title' => $icd_records['title']['@value'],
             'releaseId' => $icd_records['releaseId'],
+            'releaseYear' => $release->releaseYear,
             'language' => $icd_records['title']['@language'],
             'browserUrl' => $icd_records['browserUrl'],
             'parent_id' => null,

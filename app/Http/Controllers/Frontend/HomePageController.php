@@ -17,20 +17,22 @@ class HomePageController extends Controller
     {
         $icd_11_availableRelease = [];
         $icd_10_availableRelease = [];
-        $releaseId = $request->releaseId;
+        
+        $releaseYear = $request->releaseYear;
+        
         $currentLocale = LaravelLocalization::getCurrentLocale();
-    
+        
         $icd_11_release = Icd11Release::where('lang','LIKE',"%{$currentLocale}%")
-        ->when($releaseId,function ($query, $releaseId) {
-            return $query->where('releaseId', $releaseId);
+        ->when($releaseYear,function ($query, $releaseYear) {
+            return $query->where('releaseYear', $releaseYear);
         })
         ->get();
+        
         $icd_10_release = Icd10Release::where('lang','LIKE',"%{$currentLocale}%")
-        ->when($releaseId,function ($query, $releaseId) {
-            return $query->where('releaseId', $releaseId);
+        ->when($releaseYear,function ($query, $releaseYear) {
+            return $query->where('releaseYear', $releaseYear);
         })
         ->get();
-
 
         SEOTools::setTitle('Home Package');
         SEOTools::setDescription('This is my page description from Package');
@@ -55,7 +57,6 @@ class HomePageController extends Controller
             }
         } 
 
-       
         
         return view('themes.default.pages.content.home',[
            'icd_11_availableRelease' => $icd_11_availableRelease,

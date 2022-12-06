@@ -10,12 +10,12 @@ function http_to_https($url)
 }
 
 
-function icd_11_lang_available($releaseId)
+function icd_11_lang_available($releaseYear)
 {
-   $release_lang = Icd11Release::where('releaseId',$releaseId)->first();
+   $release_lang = Icd11Release::where('releaseYear',$releaseYear)->first();
 
    if (empty($release_lang)) {
-      $lang_available['releaseId'] = $releaseId;
+      $lang_available['releaseYear'] = $releaseYear;
       $lang_available['status'] = 404;
       return $lang_available;
    }

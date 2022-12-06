@@ -48,7 +48,7 @@
 <span class="text-xl font-bold">Browse ICD-11-CM Codes List</span>
 @foreach ($icd_11_availableRelease['book'] as $key => $icd_11_availableRelease_data)
 @foreach ($icd_11_availableRelease_data as $icd_11_availableRelease_data_get)
-          <li class=""><a href="{{  route('icd11.code.index',['releaseId' => $icd_11_availableRelease_data_get->releaseId]) }}">{{ $icd_11_availableRelease_data_get->title }} | Release:{{ $icd_11_availableRelease_data_get->releaseId }} | Version: {{ $icd_11_availableRelease['releaseType'][$key] }}</a></li>
+          <li class=""><a href="{{  route('icd11.code.index',['releaseYear' => $icd_11_availableRelease_data_get->releaseYear]) }}">{{ $icd_11_availableRelease_data_get->title }} | Release:{{ $icd_11_availableRelease_data_get->releaseId }} | Version: {{ $icd_11_availableRelease['releaseType'][$key] }}</a></li>
 @endforeach
 @endforeach
 @endif
@@ -58,7 +58,7 @@
 <span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
 @foreach ($icd_10_availableRelease['book'] as $key => $icd_10_availableRelease_data)
 @foreach ($icd_10_availableRelease_data as $icd_10_availableRelease_data_get)
-          <li class=""><a href="{{  route('icd10.code.index',['releaseId' => $icd_10_availableRelease_data_get->releaseId]) }}">{{ $icd_10_availableRelease_data_get->title }} | Release:{{ $icd_10_availableRelease_data_get->releaseId }} | Version: {{ $icd_10_availableRelease['releaseType'][$key] }}</a></li>
+          <li class=""><a href="{{  route('icd10.code.index',['releaseYear' => $icd_10_availableRelease_data_get->releaseYear]) }}">{{ $icd_10_availableRelease_data_get->title }} | Release:{{ $icd_10_availableRelease_data_get->releaseId }} | Version: {{ $icd_10_availableRelease['releaseType'][$key] }}</a></li>
 @endforeach
 @endforeach  
 @endif

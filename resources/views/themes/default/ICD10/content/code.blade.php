@@ -4,7 +4,7 @@
     @foreach ($child as $record)
 
     <li><a class="hover:text-blue-600 hover:underline" href="{{ route('icd10.code.index',[
-        'releaseId'=> $record->releaseId,
+        'releaseYear'=> $record->releaseYear,
         'code' => $record->code
         ]) }}">
         @if (!empty($record->code))

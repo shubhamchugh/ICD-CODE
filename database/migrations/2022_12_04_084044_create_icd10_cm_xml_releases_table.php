@@ -13,17 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('icd11_releases', function (Blueprint $table) {
+        Schema::create('icd10_cm_xml_releases', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
             $table->string('releaseYear')->nullable();
             $table->string('releaseId')->nullable();
-            $table->string('title')->nullable();
-            $table->string('description')->nullable();
-            $table->string('releaseDate')->nullable();
             $table->string('lang')->nullable();
-            $table->string('release')->nullable();
-            $table->string('latestRelease')->nullable();
-            $table->string('browserUrl')->nullable();
             $table->string('is_fetch')->default('pending');
             $table->softDeletes();
             $table->timestamps();
@@ -37,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('icd11_releases');
+        Schema::dropIfExists('icd10_cm_xml_releases');
     }
 };

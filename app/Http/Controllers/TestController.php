@@ -14,6 +14,5 @@ class TestController extends Controller
 {
     public function home()
     {
-		return view('themes.default.content.home');
 	  }
 }
