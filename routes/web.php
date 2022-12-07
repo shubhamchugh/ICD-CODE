@@ -69,7 +69,7 @@ Route::domain('{releaseYear}.'.request()->server('SERVER_NAME'))->group(function
 Route::group([
 	'domain' => '{releaseYear}.'.request()->server('SERVER_NAME'),
 	'prefix' => LaravelLocalization::setLocale(),
-	'where' => ['releaseYear' => '2022|2021|2020|2019|2018|2016|2010|2008'],
+	'where' => ['releaseYear' => '2023|2022|2021|2020|2019|2018|2017|2016|2015|2014|2010|2008'],
 	'middleware' => [ 'localeCookieRedirect','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 	], function() {
 		Route::get('/',[HomePageController::class,'index']);
