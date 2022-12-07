@@ -1,8 +1,8 @@
-@include('themes.default.ICD10.panels.head')
+@include('themes.default.ICD10XML_CM.panels.head')
 
 <body>
-    @include('themes.default.ICD10.panels.navbar')
-    @include('themes.default.ICD10.panels.header')
+    @include('themes.default.ICD10XML_CM.panels.navbar')
+    @include('themes.default.ICD10XML_CM.panels.header')
 
     @section('content')
 
@@ -11,6 +11,6 @@
 </body>
 
 
-@include('themes.default.ICD10.panels.footer')
+@include('themes.default.ICD10XML_CM.panels.footer')
 
 </html>
