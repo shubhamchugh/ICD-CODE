@@ -20,7 +20,7 @@ class ICD10CmXmlRelease extends Seeder
             DB::table('icd10_cm_xml_releases')->insert([
                 'releaseId' => $releaseId,
                 'releaseYear' => $releaseId,
-                'lang' => 'en',
+                'language' => 'en',
             ]);
         }
     }

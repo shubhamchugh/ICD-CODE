@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('releaseYear')->nullable();
             $table->string('releaseId')->nullable();
-            $table->string('lang')->nullable();
+            $table->string('language')->nullable();
             $table->string('is_fetch')->default('pending');
             $table->softDeletes();
             $table->timestamps();

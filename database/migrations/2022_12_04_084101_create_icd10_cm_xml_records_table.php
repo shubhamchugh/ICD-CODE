@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('icd10_cm_xml_records', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('parent_id')->unsigned()->nullable();
+            $table->string('slug')->nullable();
             $table->string('releaseYear')->nullable();
             $table->string('code')->nullable();
             $table->string('chapter_code')->nullable();
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->string('branch_code')->nullable();
             $table->string('leaf_code')->nullable();
             $table->string('sub_leaf_code')->nullable();
+            $table->string('leaf_point_code')->nullable();
             $table->string('classKind')->nullable();
             $table->string('releaseDate')->nullable();
             $table->string('releaseId')->nullable();

@@ -36,6 +36,8 @@ class ICD10CmXmlInfoStoreController extends Controller
 
                 $chapter_store = Icd10CmXmlRecord::firstOrCreate([
                     'releaseYear' => $icd10release->releaseYear,
+                    'language' => $icd10release->language,
+                    'slug' => $chapter_code,
                     'code' => $chapter_code,
                     'chapter_code' => $chapter_code,
                     'parent_id' => null,
@@ -55,8 +57,11 @@ class ICD10CmXmlInfoStoreController extends Controller
                         echo '<h2>-->section : '.$section->attributes()->id.'</h2><br>';
                         $block_desc_single = (!empty($section->desc)) ? trim(Str::before($section->desc, '(')) : null;
                         $block_store =   Icd10CmXmlRecord::firstOrCreate([
-                            'releaseYear' => $icd10release->releaseYear,
+                          'releaseYear' => $icd10release->releaseYear,
+                          'language' => $icd10release->language,
+                          'slug' => $chapter_code.'_'.$section->attributes()->id,
                           'code' => $section->attributes()->id,
+                          //'chapter_code' => $chapter_code,
                           'section_code' =>$section->attributes()->id,
                           'title' => $block_desc_single,
                           'parent_id' => $chapter_store->id,
@@ -68,7 +73,11 @@ class ICD10CmXmlInfoStoreController extends Controller
                         echo "<h3>---->Branch: $branch->name</h3>";
                         $branch_store =   Icd10CmXmlRecord::firstOrCreate([
                             'releaseYear' => $icd10release->releaseYear,
+                            'language' => $icd10release->language,
+                            'slug' => $chapter_code.'_'.$section->attributes()->id.'_'.$branch->name,
                                 'code' => $branch->name,
+                                // 'chapter_code' => $chapter_code,
+                                // 'section_code' =>$section->attributes()->id,
                                 'branch_code' => $branch->name,
                                 'parent_id' => $block_store->id,
                                 'classKind' => 'branch',
@@ -84,65 +93,91 @@ class ICD10CmXmlInfoStoreController extends Controller
                             ]);
 
 
-                            if (!empty($branch->diag)) {
-                                foreach ($branch->diag as $leaf) {
-                                    echo "<h4>----------> Leaf: $leaf->name</h4>";
-                                    $leaf_store =   Icd10CmXmlRecord::firstOrCreate([
-                                        'releaseYear' => $icd10release->releaseYear,
-                                          'code' => $leaf->name,
-                                          'leaf_code' => $leaf->name,
-                                          'parent_id' => $branch_store->id,
-                                          'classKind' => 'leaf',
-                                          'title' => $leaf->desc,
-                                          'includes' => (!empty($leaf->includes)) ? json_encode($leaf->includes) : null,
-                                          'inclusionTerm' => (!empty($leaf->inclusionTerm)) ? json_encode($leaf->inclusionTerm) : null,
-                                          'notes' => (!empty($leaf->notes)) ? json_encode($leaf->notes) : null,
-                                          'codeFirst' => (!empty($leaf->codeFirst)) ? json_encode($leaf->codeFirst) : null,
-                                          'codeAlso' => (!empty($leaf->codeAlso)) ? json_encode($leaf->codeAlso) : null,
-                                          'useAdditionalCode' => (!empty($leaf->useAdditionalCode)) ? json_encode($leaf->useAdditionalCode) : null,
-                                          'excludes1' => (!empty($leaf->excludes1)) ? json_encode($leaf->excludes1) : null,
-                                          'excludes2' => (!empty($leaf->excludes2)) ? json_encode($leaf->excludes2) : null,
-                                      ]);
+                        if (!empty($branch->diag)) {
+                            foreach ($branch->diag as $leaf) {
+                                echo "<h4>----------> Leaf: $leaf->name</h4>";
+                                $leaf_store =   Icd10CmXmlRecord::firstOrCreate([
+                                      'releaseYear' => $icd10release->releaseYear,
+                                      'language' => $icd10release->language,
+                                      'slug' => $chapter_code.'_'.$section->attributes()->id.'_'.$branch->name.'_'.$leaf->name,
+                                      'code' => $leaf->name,
+                                    //   'chapter_code' => $chapter_code,
+                                    //   'section_code' =>$section->attributes()->id,
+                                    //   'branch_code' => $branch->name,
+                                      'leaf_code' => $leaf->name,
+                                      'parent_id' => $branch_store->id,
+                                      'classKind' => 'leaf',
+                                      'title' => $leaf->desc,
+                                      'includes' => (!empty($leaf->includes)) ? json_encode($leaf->includes) : null,
+                                      'inclusionTerm' => (!empty($leaf->inclusionTerm)) ? json_encode($leaf->inclusionTerm) : null,
+                                      'notes' => (!empty($leaf->notes)) ? json_encode($leaf->notes) : null,
+                                      'codeFirst' => (!empty($leaf->codeFirst)) ? json_encode($leaf->codeFirst) : null,
+                                      'codeAlso' => (!empty($leaf->codeAlso)) ? json_encode($leaf->codeAlso) : null,
+                                      'useAdditionalCode' => (!empty($leaf->useAdditionalCode)) ? json_encode($leaf->useAdditionalCode) : null,
+                                      'excludes1' => (!empty($leaf->excludes1)) ? json_encode($leaf->excludes1) : null,
+                                      'excludes2' => (!empty($leaf->excludes2)) ? json_encode($leaf->excludes2) : null,
+                                  ]);
 
-                                      if (!empty($leaf->diag)) {
-                                        foreach ($leaf->diag as $subLeaf) {
-                                            echo "<h5>-------------------->SubLeaf: $subLeaf->name</h5>";
+                                if (!empty($leaf->diag)) {
+                                    foreach ($leaf->diag as $subLeaf) {
+                                        echo "<h5>-------------------->SubLeaf: $subLeaf->name</h5>";
 
-                                            Icd10CmXmlRecord::firstOrCreate([
-                                                'releaseYear' => $icd10release->releaseYear,
-                                                'code' => $subLeaf->name,
-                                                'sub_leaf_code' => $subLeaf->name,
-                                                'parent_id' => $leaf_store->id,
-                                                'classKind' => 'sub-leaf',
-                                                'title' => $subLeaf->desc,
-                                                'includes' => (!empty($subLeaf->includes)) ? json_encode($subLeaf->includes) : null,
-                                                'inclusionTerm' => (!empty($subLeaf->inclusionTerm)) ? json_encode($subLeaf->inclusionTerm) : null,
-                                                'notes' => (!empty($subLeaf->notes)) ? json_encode($subLeaf->notes) : null,
-                                                'codeFirst' => (!empty($subLeaf->codeFirst)) ? json_encode($subLeaf->codeFirst) : null,
-                                                'codeAlso' => (!empty($subLeaf->codeAlso)) ? json_encode($subLeaf->codeAlso) : null,
-                                                'useAdditionalCode' => (!empty($subLeaf->useAdditionalCode)) ? json_encode($subLeaf->useAdditionalCode) : null,
-                                                'excludes1' => (!empty($subLeaf->excludes1)) ? json_encode($subLeaf->excludes1) : null,
-                                                'excludes2' => (!empty($subLeaf->excludes2)) ? json_encode($subLeaf->excludes2) : null,
-                                            ]);
+                                        Icd10CmXmlRecord::firstOrCreate([
+                                            'releaseYear' => $icd10release->releaseYear,
+                                            'language' => $icd10release->language,
+                                            'slug' => $chapter_code.'_'.$section->attributes()->id.'_'.$branch->name.'_'.$leaf->name.'_'.$subLeaf->name,
+                                            'code' => $subLeaf->name,
+                                            // 'chapter_code' => $chapter_code,
+                                            // 'section_code' =>$section->attributes()->id,
+                                            // 'branch_code' => $branch->name,
+                                            // 'leaf_code' => $leaf->name,
+                                            'sub_leaf_code' => $subLeaf->name,
+                                            'parent_id' => $leaf_store->id,
+                                            'classKind' => 'sub-leaf',
+                                            'title' => $subLeaf->desc,
+                                            'includes' => (!empty($subLeaf->includes)) ? json_encode($subLeaf->includes) : null,
+                                            'inclusionTerm' => (!empty($subLeaf->inclusionTerm)) ? json_encode($subLeaf->inclusionTerm) : null,
+                                            'notes' => (!empty($subLeaf->notes)) ? json_encode($subLeaf->notes) : null,
+                                            'codeFirst' => (!empty($subLeaf->codeFirst)) ? json_encode($subLeaf->codeFirst) : null,
+                                            'codeAlso' => (!empty($subLeaf->codeAlso)) ? json_encode($subLeaf->codeAlso) : null,
+                                            'useAdditionalCode' => (!empty($subLeaf->useAdditionalCode)) ? json_encode($subLeaf->useAdditionalCode) : null,
+                                            'excludes1' => (!empty($subLeaf->excludes1)) ? json_encode($subLeaf->excludes1) : null,
+                                            'excludes2' => (!empty($subLeaf->excludes2)) ? json_encode($subLeaf->excludes2) : null,
+                                        ]);
+
+                                        if (!empty($subLeaf->diag)) {
+                                            foreach ($subLeaf->diag as $leafPoint) {
+                                                echo "<h5>-------------------->Leaf Point: $leafPoint->name</h5>";
+                                                Icd10CmXmlRecord::firstOrCreate([
+                                                    'releaseYear' => $icd10release->releaseYear,
+                                                    'language' => $icd10release->language,
+                                                    'slug' => $chapter_code.'_'.$section->attributes()->id.'_'.$branch->name.'_'.$leaf->name.'_'.$subLeaf->name.'_'.$leafPoint->name,
+                                                    'code' => $leafPoint->name,
+                                                    // 'chapter_code' => $chapter_code,
+                                                    // 'section_code' =>$section->attributes()->id,
+                                                    // 'branch_code' => $branch->name,
+                                                    // 'leaf_code' => $leaf->name,
+                                                    // 'sub_leaf_code' => $subLeaf->name,
+                                                    'leaf_point_code' => $leafPoint->name,
+                                                    'parent_id' => $leaf_store->id,
+                                                    'classKind' => 'sub-leaf',
+                                                    'title' => $leafPoint->desc,
+                                                    'includes' => (!empty($leafPoint->includes)) ? json_encode($leafPoint->includes) : null,
+                                                    'inclusionTerm' => (!empty($leafPoint->inclusionTerm)) ? json_encode($leafPoint->inclusionTerm) : null,
+                                                    'notes' => (!empty($leafPoint->notes)) ? json_encode($leafPoint->notes) : null,
+                                                    'codeFirst' => (!empty($leafPoint->codeFirst)) ? json_encode($leafPoint->codeFirst) : null,
+                                                    'codeAlso' => (!empty($leafPoint->codeAlso)) ? json_encode($leafPoint->codeAlso) : null,
+                                                    'useAdditionalCode' => (!empty($leafPoint->useAdditionalCode)) ? json_encode($leafPoint->useAdditionalCode) : null,
+                                                    'excludes1' => (!empty($leafPoint->excludes1)) ? json_encode($leafPoint->excludes1) : null,
+                                                    'excludes2' => (!empty($leafPoint->excludes2)) ? json_encode($leafPoint->excludes2) : null,
+                                                ]);
+                                            }
                                         }
-                                      }
-
-
-
-
+                                    }
                                 }
                             }
-
-
-
-
-
+                        }
                     }
-
-
-
-
-
                 }
             }
         }

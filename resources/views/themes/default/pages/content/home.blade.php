@@ -64,6 +64,14 @@
 @endif
 
 
+@if ($icd_10_xml_availableRelease)
+<span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
+@foreach ($icd_10_xml_availableRelease['book'] as $key => $icd_10_xml_availableRelease_data)
+<li><a href="{{ route('icd10xml.code.index',['releaseYear' => $icd_10_xml_availableRelease_data->releaseYear]) }}">{{ $icd_10_xml_availableRelease_data->title }}</a> Release Year: {{ $icd_10_xml_availableRelease_data->releaseYear }} Language: {{ $icd_10_xml_availableRelease_data->lang }}</li>
+@endforeach  
+@endif
+
+
 
 <!-- FAQ Section: Simple -->
 <div class="bg-white">

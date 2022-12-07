@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\HomePageController;
+use App\Http\Controllers\Frontend\ICD10\ICD10CM_XML_CodePageController;
 use App\Http\Controllers\Frontend\ICD10\ICD10CodePageController;
 use App\Http\Controllers\Frontend\ICD11\Icd11CodePageController;
 use App\Http\Controllers\GetData\ICD10\Icd10BookStoreController;
@@ -27,9 +28,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-
-// Route::get('test',[TestController::class,'index']);
-
 /******************************
  * ICD 11 DATA STORE FROM API *
  ******************************/
@@ -51,7 +49,6 @@ Route::get('icd_10_store_info',[ICD10InfoStoreController::class,'InfoStore']);
 /******************************************
  * ICD 10 CM XML DATA STORE FROM XML FILE *
  ******************************************/
-
 Route::get('icd_10_cm_xml_store_info',[ICD10CmXmlInfoStoreController::class,'index']);
 
 
@@ -64,18 +61,19 @@ Route::group([
 });
 
 Route::domain('{releaseYear}.'.request()->server('SERVER_NAME'))->group(function () {
-	Route::get('icd10/{code?}',[ICD10CodePageController::class,'index'])->name('icd10.code.index');
+	Route::get('ICD10/API/{code?}',[ICD10CodePageController::class,'index'])->name('icd10.code.index');
+	Route::get('ICD10CM/{slug?}',[ICD10CM_XML_CodePageController::class,'index'])->name('icd10xml.code.index');
 });
 
 // With the localize middleware, this route cannot be reached without language subdomain
 Route::group([
 	'domain' => '{releaseYear}.'.request()->server('SERVER_NAME'),
 	'prefix' => LaravelLocalization::setLocale(),
-	'where' => ['releaseYear' => '2022|2021|2020|2019|2018|2019|2016|2010|2008'],
+	'where' => ['releaseYear' => '2022|2021|2020|2019|2018|2016|2010|2008'],
 	'middleware' => [ 'localeCookieRedirect','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 	], function() {
 		Route::get('/',[HomePageController::class,'index']);
-	Route::get('icd11/{liner_id?}',[Icd11CodePageController::class,'index'])->name('icd11.code.index');
+		Route::get('ICD11CM/{liner_id?}',[Icd11CodePageController::class,'index'])->name('icd11.code.index');
 });
 
 
