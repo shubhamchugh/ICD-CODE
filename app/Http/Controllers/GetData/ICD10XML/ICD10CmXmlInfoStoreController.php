@@ -15,6 +15,10 @@ class ICD10CmXmlInfoStoreController extends Controller
     {
         $icd10release = Icd10CmXmlRelease::where('is_fetch', 'pending')->first();
 
+        if (empty( $icd10release )) {
+            return "No data found to store in database";
+        }
+
         if (!empty($icd10release)) {
             $filePath = 'public/Data/ICD10CM/icd10cm_'.$icd10release->releaseYear.'.xml';
             $filePath = Storage::path($filePath);
