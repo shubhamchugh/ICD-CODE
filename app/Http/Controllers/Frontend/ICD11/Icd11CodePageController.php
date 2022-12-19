@@ -17,7 +17,7 @@ class Icd11CodePageController extends Controller
 
         $lang_available = icd_11_lang_available($releaseYear);
         if (!empty($lang_available['status']) == 404 ) {
-            return abort($lang_available['status'],'releaseId'.$releaseId.'Not Found in our database');
+            return abort($lang_available['status'],'releaseId'.$releaseYear.'Not Found in our database');
         }
         
         $availableRecords =  Icd11Record::where('language',LaravelLocalization::getCurrentLocale() )
@@ -51,6 +51,7 @@ class Icd11CodePageController extends Controller
         return view('themes.default.ICD11.content.code',[
             'child' => $child,
             'lang_available' => $lang_available,
+            'availableRecords' => $availableRecords,
         ]);
     }
 }

@@ -73,7 +73,7 @@ Route::group([
 	'middleware' => [ 'localeCookieRedirect','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 	], function() {
 		Route::get('/',[HomePageController::class,'index']);
-		Route::get('ICD11CM/{liner_id?}',[Icd11CodePageController::class,'index'])->name('icd11.code.index');
+		Route::get('ICD11CM/{liner_id?}',[Icd11CodePageController::class,'index'])->where('liner_id', '[\w\s\-_\/]+')->name('icd11.code.index');
 });
 
 
