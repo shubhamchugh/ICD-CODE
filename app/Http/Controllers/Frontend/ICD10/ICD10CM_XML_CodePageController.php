@@ -32,6 +32,8 @@ class ICD10CM_XML_CodePageController extends Controller
                 })
                 ->first();
 
+            $history_Codes = Icd10CmXmlRecord::where('code',$codeDetails->code)->get();    
+            
 
             $availableRecords = Icd10CmXmlRecord::where('parent_id', $codeDetails->id)
                        ->where('language', LaravelLocalization::getCurrentLocale())
@@ -43,6 +45,7 @@ class ICD10CM_XML_CodePageController extends Controller
             return view('themes.default.ICD10XML_CM.content.code', [
                 'availableRecords' => $availableRecords,
                 'codeDetails' => $codeDetails,
+                'history_Codes' => $history_Codes
             ]);
         }
 
@@ -51,6 +54,7 @@ class ICD10CM_XML_CodePageController extends Controller
 
         return view('themes.default.ICD10XML_CM.content.code', [
             'chapterAvailable' => $chapterAvailable,
+            'availableRecords' => [],
         ]);
     }
 }

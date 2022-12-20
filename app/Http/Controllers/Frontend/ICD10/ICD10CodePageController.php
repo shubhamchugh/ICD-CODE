@@ -41,8 +41,12 @@ class ICD10CodePageController extends Controller
         ->where('language',LaravelLocalization::getCurrentLocale())
         ->get();
 
-        SEOTools::setTitle('ICD CODE LIST');
-        SEOTools::setDescription('ICD CODE LIST');
+
+
+       $code_title = (!empty($availableRecords->title)) ? $availableRecords->title : Null;
+
+        SEOTools::setTitle($releaseYear. ' ICD-10 CM Codes for '. $code_title);
+        SEOTools::setDescription($releaseYear. ' ICD-10 CM Codes for '. $code_title);
 
         return view('themes.default.ICD10.content.code',[
             'child' => $child,

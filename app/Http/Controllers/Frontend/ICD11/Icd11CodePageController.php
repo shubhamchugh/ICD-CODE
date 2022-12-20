@@ -45,8 +45,10 @@ class Icd11CodePageController extends Controller
         ->where('language',LaravelLocalization::getCurrentLocale())
         ->get();
 
-        SEOTools::setTitle('ICD CODE LIST');
-        SEOTools::setDescription('ICD CODE LIST');
+        $code_title = (!empty($availableRecords->title)) ? $availableRecords->title : Null;
+
+        SEOTools::setTitle($releaseYear. ' ICD-11 Codes for '. $code_title);
+        SEOTools::setDescription($releaseYear. ' ICD-11 Codes for '. $code_title);
 
         return view('themes.default.ICD11.content.code',[
             'child' => $child,

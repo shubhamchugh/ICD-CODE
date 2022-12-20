@@ -76,67 +76,49 @@
 <!-- FAQ Section: Simple -->
 <div class="bg-white">
     <div class="space-y-16 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
-      <!-- Heading -->
-      <div class="text-center">
-        <div class="text-sm uppercase font-bold tracking-wider mb-1 text-blue-700">
-        We Answer
-        </div>
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
-          Frequently Asked Questions
-        </h2>
-      </div>
-      <!-- END Heading -->
   
       <!-- FAQ -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div class="prose prose-indigo">
-          <h4>
-            What features are included?
-          </h4>
-          <p>
-            Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.
-          </p>
+          <div class="prose prose-indigo">
+            <h4 class="text-lime-800 text-xl text-base">
+              New in ICD-11 2022
+            </h4>
+          
+              <li>35 countries are using ICD-11.&nbsp;</li>
+              <li>Current implemented uses of ICD-11 include causes of death,primary care, cancer registration, patient safety, dermatology, pain documentation, allergology, reimbursement, clinical documentation, data dictionaries for WHO guidelines*,&nbsp;digital documentation of COVID-19 vaccination status and test results, and more.</li>
+              <li><a>French</a>&nbsp;language is now available alongside&nbsp;<a>Arabic</a>,&nbsp;<a>Chinese</a>,&nbsp;<a>English</a>, &amp;&nbsp;<a>Spanish</a>. Russian and 20 more languages are underway.</li>
+              <li>Integration in DHIS2.&nbsp;</li>
+              <li>Terminology coding with the coding tool and API.</li>
+              <li>Rare diseases coding.</li>
+              <li>Support for perinatal and maternal coding.</li>
+              <li>900 proposals were processed based on input from early adopters, translators, scientists, clinicians and partners.</li>
+              <li>Grade and stage coding for cancers.</li>
+              <li>Clinical Descriptions and Diagnostic Requirements for mental health.</li>
+           
+            
+          </div>
         </div>
         <div class="prose prose-indigo">
-          <h4>
-            Can I use PayPal to pay you?
+          <h4 class="text-lime-800 text-xl text-base">
+            ICD-11 was specifically designed for the following use cases:
           </h4>
-          <p>
-            Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.
-          </p>
+         
+            <li>Certification and reporting of causes of death</li>
+            <li>Morbidity coding and reporting including&nbsp;primary care</li>
+            <li>Casemix and Diagnosis-Related Grouping (DRG)</li>
+            <li>Assessing and monitoring the safety, efficacy, and quality of care</li>
+            <li>Cancer registries&nbsp;</li>
+            <li>Antimicrobial resistance (AMR)</li>
+            <li>Researching and performing clinical trials and epidemiological studies</li>
+            <li>Assessing functioning&nbsp;</li>
+            <li>Coding traditional medicine conditions</li>
+            <li>Interoperability standard in &nbsp;WHO Digital Guidelines and for Digital Documentation of COVID-19 Certificates (DDCC)</li>
+            <li>Clinical documentation&nbsp;</li>
+          
+          
         </div>
-        <div class="prose prose-indigo">
-          <h4>
-            Do I get access to the community?
-          </h4>
-          <p>
-            Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.
-          </p>
-        </div>
-        <div class="prose prose-indigo">
-          <h4>
-            Can I get a refund just in case?
-          </h4>
-          <p>
-            Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.
-          </p>
-        </div>
-        <div class="prose prose-indigo">
-          <h4>
-            Do you offer email support?
-          </h4>
-          <p>
-            Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.
-          </p>
-        </div>
-        <div class="prose prose-indigo">
-          <h4>
-            Are the updates free for life?
-          </h4>
-          <p>
-            Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.
-          </p>
-        </div>
+       
       </div>
       <!-- END FAQ -->
     </div>

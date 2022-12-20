@@ -1,7 +1,6 @@
 @extends('themes.default.ICD11.layouts.master')
 @section('content')
 <div class="container xl:max-w-7xl mx-auto px-4 py-8">
-    {{-- {{ dd($availableRecords) }} --}}
     <div class="m-4">
         <h1 class="text-center text-4xl">@if ($availableRecords->code)
             {{ $availableRecords->code }}
@@ -18,7 +17,11 @@
         </h1>
     </div>
 
-    <div class="lg:mx-20 my-10 px-10 py-10 mx-auto rounded-2xl shadow-2xl">
+    <div class="lg:mx-20 my-10 px-10 py-10 mx-auto rounded-xl shadow-lg">
+
+        <strong>{{ $availableRecords->title }}</strong>
+
+
         @if ($availableRecords->definition)
         <h2 class="m-4"> <strong class="text-blue-800">Definition:</strong> {{ $availableRecords->definition }}</h2>
         @endif

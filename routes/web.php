@@ -61,7 +61,7 @@ Route::group([
 });
 
 Route::domain('{releaseYear}.'.request()->server('SERVER_NAME'))->group(function () {
-	Route::get('ICD10/API/{code?}',[ICD10CodePageController::class,'index'])->name('icd10.code.index');
+	Route::get('ICD10-CM/{code?}',[ICD10CodePageController::class,'index'])->name('icd10.code.index');
 	Route::get('ICD10CM/{slug?}',[ICD10CM_XML_CodePageController::class,'index'])->name('icd10xml.code.index');
 });
 
@@ -72,7 +72,7 @@ Route::group([
 	'where' => ['releaseYear' => '2023|2022|2021|2020|2019|2018|2017|2016|2015|2014|2010|2008'],
 	'middleware' => [ 'localeCookieRedirect','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 	], function() {
-		Route::get('/',[HomePageController::class,'index']);
+		Route::get('/',[HomePageController::class,'index'])->name('year.home.index');
 		Route::get('ICD11CM/{liner_id?}',[Icd11CodePageController::class,'index'])->where('liner_id', '[\w\s\-_\/]+')->name('icd11.code.index');
 });
 
