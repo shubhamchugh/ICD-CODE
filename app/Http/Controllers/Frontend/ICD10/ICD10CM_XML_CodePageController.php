@@ -44,7 +44,7 @@ class ICD10CM_XML_CodePageController extends Controller
 
             $code = (!empty($codeDetails->code)) ? $codeDetails->code : null;
 
-            SEOTools::setTitle($code.' '.$code_title . ' ICD 10 Codes'. $releaseYear);
+            SEOTools::setTitle('ICD 10 Code: '.$code.' '.$code_title .'-'. $releaseYear);
             SEOTools::setDescription('ICD 10 Code for '.$code_title.'. Inclusion, exclusion and all ICD 10 '.$code.' history, related codes, synonyms, rules & guidelines.');
 
             return view('themes.default.ICD10XML_CM.content.code', [

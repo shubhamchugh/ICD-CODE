@@ -5,6 +5,9 @@
         <h1 class="text-center text-4xl">@if ($availableRecords->code)
             {{ $availableRecords->code }} - 
             @endif
+            @if ($availableRecords->codeRange)
+            {{ $availableRecords->codeRange }} - 
+            @endif
             {{ $availableRecords->title }}
             [ ICD 11 MMS
             @if ($availableRecords->releaseYear)
@@ -15,7 +18,7 @@
 
     <div class="lg:mx-20 my-10 px-10 py-10 mx-auto rounded-xl shadow-lg">
 
-    <strong>The ICD 10 Code {{ $availableRecords->code ?? ""}}  is a WHO Classified code for {{ $availableRecords->title ?? ""}}</strong>
+        The ICD 11 Code <strong>{{ $availableRecords->code ?? ""}} {{ $availableRecords->codeRange ?? ""}}</strong>  is a WHO Classified code for <strong>{{ $availableRecords->title ?? ""}}</strong>
 
 
         @if ($availableRecords->definition)
