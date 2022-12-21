@@ -45,29 +45,29 @@
 <hr class="my-4 mx-auto h-1 bg-gray-400 rounded border-0 lg:my-8 dark:bg-gray-700">
 
 @if ($icd_11_availableRelease)
-<span class="text-xl font-bold">Browse ICD-11-CM Codes List</span>
+<span class="text-xl font-bold text-blue-700">Browse ICD-11-CM Codes List</span>
 @foreach ($icd_11_availableRelease['book'] as $key => $icd_11_availableRelease_data)
 @foreach ($icd_11_availableRelease_data as $icd_11_availableRelease_data_get)
-          <li class=""><a href="{{  route('icd11.code.index',['releaseYear' => $icd_11_availableRelease_data_get->releaseYear]) }}">{{ $icd_11_availableRelease_data_get->title }} | Release:{{ $icd_11_availableRelease_data_get->releaseId }} | Version: {{ $icd_11_availableRelease['releaseType'][$key] }}</a></li>
+          <li class="hover:underline hover:text-blue-700"><a href="{{  route('icd11.code.index',['releaseYear' => $icd_11_availableRelease_data_get->releaseYear]) }}">{{ $icd_11_availableRelease_data_get->title }} | Release:{{ $icd_11_availableRelease_data_get->releaseId }} | Version: {{ $icd_11_availableRelease['releaseType'][$key] }}</a></li>
 @endforeach
 @endforeach
 @endif
 
 
 @if ($icd_10_availableRelease)
-<span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
+<span class="text-xl font-bold text-blue-700">Browse ICD-10-CM Codes List</span>
 @foreach ($icd_10_availableRelease['book'] as $key => $icd_10_availableRelease_data)
 @foreach ($icd_10_availableRelease_data as $icd_10_availableRelease_data_get)
-          <li class=""><a href="{{  route('icd10.code.index',['releaseYear' => $icd_10_availableRelease_data_get->releaseYear]) }}">{{ $icd_10_availableRelease_data_get->title }} | Release:{{ $icd_10_availableRelease_data_get->releaseId }} | Version: {{ $icd_10_availableRelease['releaseType'][$key] }}</a></li>
+          <li class="hover:underline hover:text-blue-700"><a href="{{  route('icd10.code.index',['releaseYear' => $icd_10_availableRelease_data_get->releaseYear]) }}">{{ $icd_10_availableRelease_data_get->title }} | Release:{{ $icd_10_availableRelease_data_get->releaseId }} | Version: {{ $icd_10_availableRelease['releaseType'][$key] }}</a></li>
 @endforeach
 @endforeach  
 @endif
 
 
 @if ($icd_10_xml_availableRelease)
-<span class="text-xl font-bold">Browse ICD-10-CM Codes List</span>
+<span class="text-xl font-bold text-blue-700">Browse ICD-10-CM Codes List</span>
 @foreach ($icd_10_xml_availableRelease['book'] as $key => $icd_10_xml_availableRelease_data)
-<li><a href="{{ route('icd10xml.code.index',['releaseYear' => $icd_10_xml_availableRelease_data->releaseYear]) }}">{{ $icd_10_xml_availableRelease_data->title }}</a> Release Year: {{ $icd_10_xml_availableRelease_data->releaseYear }} Language: {{ $icd_10_xml_availableRelease_data->lang }}</li>
+<li class="hover:underline hover:text-blue-700"><a href="{{ route('icd10xml.code.index',['releaseYear' => $icd_10_xml_availableRelease_data->releaseYear]) }}">{{ $icd_10_xml_availableRelease_data->title }}</a> | Release Year: {{ $icd_10_xml_availableRelease_data->releaseYear }} | Language: {{ $icd_10_xml_availableRelease_data->language }}</li>
 @endforeach  
 @endif
 
@@ -81,7 +81,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div class="prose prose-indigo">
           <div class="prose prose-indigo">
-            <h4 class="text-lime-800 text-xl text-base">
+            <h4 class="text-blue-700 text-xl font-bold">
               New in ICD-11 2022
             </h4>
           
@@ -100,7 +100,7 @@
           </div>
         </div>
         <div class="prose prose-indigo">
-          <h4 class="text-lime-800 text-xl text-base">
+          <h4 class="text-blue-700 text-xl font-bold">
             ICD-11 was specifically designed for the following use cases:
           </h4>
          
