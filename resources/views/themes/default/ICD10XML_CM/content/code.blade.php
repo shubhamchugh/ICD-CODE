@@ -9,10 +9,10 @@
         </h1>
     </div>
     <div class="lg:mx-20 my-10 px-10 py-10 mx-auto rounded-xl shadow-lg">
-        The ICD 10 Code {{ $codeDetails->code ?? "" }} is relevant to :  <strong>{{ $codeDetails->title ?? ""}}  </strong>
+      <h2>  The ICD 10 Code {{ $codeDetails->code ?? "" }} is relevant to :  <strong>{{ $codeDetails->title ?? ""}}  </strong></h2>
 
         @if (!empty($codeDetails->definition))
-        <h2 class="m-4"> <strong class="text-blue-800">Definition:</strong> {{ $codeDetails->definition }}</h2>
+        <p class="m-4"> <strong class="text-blue-800">Definition:</strong> {{ $codeDetails->definition }}</p>
         @endif
 
         @if (!empty($codeDetails->notes))
@@ -31,7 +31,7 @@
         @endif
 
         @if (!empty($codeDetails->codingHint))
-        <h2 class="m-4"> <strong class="text-amber-600">Coding Hint:</strong> {{ $codeDetails->codingHint }}</h2>
+        <p class="m-4"> <strong class="text-amber-600">Coding Hint:</strong> {{ $codeDetails->codingHint }}</p>
         @endif
 
         @if (!empty($codeDetails->includes))

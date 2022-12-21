@@ -19,7 +19,7 @@
 
     <div class="lg:mx-20 my-10 px-10 py-10 mx-auto rounded-xl shadow-lg">
 
-        <strong>The ICD 10 Code {{ $availableRecords->code ?? ""}}  is a WHO Classified code for {{ $availableRecords->title ?? ""}}</strong>
+        <h2>The ICD 10 Code <strong>{{ $availableRecords->code ?? ""}}</strong>  is a WHO Classified code for<strong>{{ $availableRecords->title ?? ""}}</strong></h2>
     
     
             @if ($availableRecords->definition)

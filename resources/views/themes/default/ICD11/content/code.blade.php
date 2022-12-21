@@ -18,7 +18,7 @@
 
     <div class="lg:mx-20 my-10 px-10 py-10 mx-auto rounded-xl shadow-lg">
 
-        The ICD 11 Code <strong>{{ $availableRecords->code ?? ""}} {{ $availableRecords->codeRange ?? ""}}</strong>  is a WHO Classified code for <strong>{{ $availableRecords->title ?? ""}}</strong>
+       <h2> The ICD 11 Code <strong>{{ $availableRecords->code ?? ""}} {{ $availableRecords->codeRange ?? ""}}</strong>  is a WHO Classified code for <strong>{{ $availableRecords->title ?? ""}}</strong></h2>
 
 
         @if ($availableRecords->definition)
