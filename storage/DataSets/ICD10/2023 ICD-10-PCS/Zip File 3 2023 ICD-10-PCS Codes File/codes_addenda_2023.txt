@@ -1,0 +1,402 @@
+Add:         00500Z3 Destruction of Brain using Laser Interstitial Thermal Therapy, Open Approach
+Add:         00503Z3 Destruction of Brain using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         00504Z3 Destruction of Brain using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         005W0Z3 Destruction of Cervical Spinal Cord using Laser Interstitial Thermal Therapy, Open Approach
+Add:         005W3Z3 Destruction of Cervical Spinal Cord using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         005W4Z3 Destruction of Cervical Spinal Cord using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         005X0Z3 Destruction of Thoracic Spinal Cord using Laser Interstitial Thermal Therapy, Open Approach
+Add:         005X3Z3 Destruction of Thoracic Spinal Cord using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         005X4Z3 Destruction of Thoracic Spinal Cord using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         005Y0Z3 Destruction of Lumbar Spinal Cord using Laser Interstitial Thermal Therapy, Open Approach
+Add:         005Y3Z3 Destruction of Lumbar Spinal Cord using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         005Y4Z3 Destruction of Lumbar Spinal Cord using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         00DC0ZZ Extraction of Cerebellum, Open Approach
+Add:         00DC3ZZ Extraction of Cerebellum, Percutaneous Approach
+Add:         00DC4ZZ Extraction of Cerebellum, Percutaneous Endoscopic Approach
+Add:         02RF08N Replacement of Aortic Valve with Zooplastic Tissue, using Rapid Deployment Technique, Open Approach
+Add:         02RF38N Replacement of Aortic Valve with Zooplastic Tissue, using Rapid Deployment Technique, Percutaneous Approach
+Add:         02RF48N Replacement of Aortic Valve with Zooplastic Tissue, using Rapid Deployment Technique, Percutaneous Endoscopic Approach
+Add:         04LE0CV Occlusion of Right Prostatic Artery with Extraluminal Device, Open Approach
+Add:         04LE0DV Occlusion of Right Prostatic Artery with Intraluminal Device, Open Approach
+Add:         04LE0ZV Occlusion of Right Prostatic Artery, Open Approach
+Add:         04LE3CV Occlusion of Right Prostatic Artery with Extraluminal Device, Percutaneous Approach
+Add:         04LE3DV Occlusion of Right Prostatic Artery with Intraluminal Device, Percutaneous Approach
+Add:         04LE3ZV Occlusion of Right Prostatic Artery, Percutaneous Approach
+Add:         04LE4CV Occlusion of Right Prostatic Artery with Extraluminal Device, Percutaneous Endoscopic Approach
+Add:         04LE4DV Occlusion of Right Prostatic Artery with Intraluminal Device, Percutaneous Endoscopic Approach
+Add:         04LE4ZV Occlusion of Right Prostatic Artery, Percutaneous Endoscopic Approach
+Add:         04LF0CW Occlusion of Left Prostatic Artery with Extraluminal Device, Open Approach
+Add:         04LF0DW Occlusion of Left Prostatic Artery with Intraluminal Device, Open Approach
+Add:         04LF0ZW Occlusion of Left Prostatic Artery, Open Approach
+Add:         04LF3CW Occlusion of Left Prostatic Artery with Extraluminal Device, Percutaneous Approach
+Add:         04LF3DW Occlusion of Left Prostatic Artery with Intraluminal Device, Percutaneous Approach
+Add:         04LF3ZW Occlusion of Left Prostatic Artery, Percutaneous Approach
+Add:         04LF4CW Occlusion of Left Prostatic Artery with Extraluminal Device, Percutaneous Endoscopic Approach
+Add:         04LF4DW Occlusion of Left Prostatic Artery with Intraluminal Device, Percutaneous Endoscopic Approach
+Add:         04LF4ZW Occlusion of Left Prostatic Artery, Percutaneous Endoscopic Approach
+Add:         0B5C0Z3 Destruction of Right Upper Lung Lobe using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5C3Z3 Destruction of Right Upper Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5C4Z3 Destruction of Right Upper Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0B5D0Z3 Destruction of Right Middle Lung Lobe using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5D3Z3 Destruction of Right Middle Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5D4Z3 Destruction of Right Middle Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0B5F0Z3 Destruction of Right Lower Lung Lobe using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5F3Z3 Destruction of Right Lower Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5F4Z3 Destruction of Right Lower Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0B5G0Z3 Destruction of Left Upper Lung Lobe using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5G3Z3 Destruction of Left Upper Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5G4Z3 Destruction of Left Upper Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0B5H0Z3 Destruction of Lung Lingula using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5H3Z3 Destruction of Lung Lingula using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5H4Z3 Destruction of Lung Lingula using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0B5J0Z3 Destruction of Left Lower Lung Lobe using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5J3Z3 Destruction of Left Lower Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5J4Z3 Destruction of Left Lower Lung Lobe using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0B5K0Z3 Destruction of Right Lung using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5K3Z3 Destruction of Right Lung using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5K4Z3 Destruction of Right Lung using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0B5L0Z3 Destruction of Left Lung using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5L3Z3 Destruction of Left Lung using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5L4Z3 Destruction of Left Lung using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0B5M0Z3 Destruction of Bilateral Lungs using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0B5M3Z3 Destruction of Bilateral Lungs using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0B5M4Z3 Destruction of Bilateral Lungs using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D510Z3 Destruction of Upper Esophagus using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D513Z3 Destruction of Upper Esophagus using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D514Z3 Destruction of Upper Esophagus using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D520Z3 Destruction of Middle Esophagus using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D523Z3 Destruction of Middle Esophagus using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D524Z3 Destruction of Middle Esophagus using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D530Z3 Destruction of Lower Esophagus using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D533Z3 Destruction of Lower Esophagus using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D534Z3 Destruction of Lower Esophagus using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D540Z3 Destruction of Esophagogastric Junction using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D543Z3 Destruction of Esophagogastric Junction using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D544Z3 Destruction of Esophagogastric Junction using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D550Z3 Destruction of Esophagus using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D553Z3 Destruction of Esophagus using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D554Z3 Destruction of Esophagus using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D560Z3 Destruction of Stomach using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D563Z3 Destruction of Stomach using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D564Z3 Destruction of Stomach using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D570Z3 Destruction of Stomach, Pylorus using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D573Z3 Destruction of Stomach, Pylorus using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D574Z3 Destruction of Stomach, Pylorus using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D580Z3 Destruction of Small Intestine using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D583Z3 Destruction of Small Intestine using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D584Z3 Destruction of Small Intestine using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D590Z3 Destruction of Duodenum using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D593Z3 Destruction of Duodenum using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D594Z3 Destruction of Duodenum using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5A0Z3 Destruction of Jejunum using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5A3Z3 Destruction of Jejunum using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5A4Z3 Destruction of Jejunum using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5B0Z3 Destruction of Ileum using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5B3Z3 Destruction of Ileum using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5B4Z3 Destruction of Ileum using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5C0Z3 Destruction of Ileocecal Valve using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5C3Z3 Destruction of Ileocecal Valve using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5C4Z3 Destruction of Ileocecal Valve using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5E0Z3 Destruction of Large Intestine using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5E3Z3 Destruction of Large Intestine using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5E4Z3 Destruction of Large Intestine using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5F0Z3 Destruction of Right Large Intestine using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5F3Z3 Destruction of Right Large Intestine using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5F4Z3 Destruction of Right Large Intestine using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5G0Z3 Destruction of Left Large Intestine using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5G3Z3 Destruction of Left Large Intestine using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5G4Z3 Destruction of Left Large Intestine using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5H0Z3 Destruction of Cecum using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5H3Z3 Destruction of Cecum using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5H4Z3 Destruction of Cecum using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5J0Z3 Destruction of Appendix using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5J3Z3 Destruction of Appendix using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5J4Z3 Destruction of Appendix using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5K0Z3 Destruction of Ascending Colon using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5K3Z3 Destruction of Ascending Colon using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5K4Z3 Destruction of Ascending Colon using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5L0Z3 Destruction of Transverse Colon using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5L3Z3 Destruction of Transverse Colon using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5L4Z3 Destruction of Transverse Colon using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5M0Z3 Destruction of Descending Colon using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5M3Z3 Destruction of Descending Colon using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5M4Z3 Destruction of Descending Colon using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5N0Z3 Destruction of Sigmoid Colon using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5N3Z3 Destruction of Sigmoid Colon using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5N4Z3 Destruction of Sigmoid Colon using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5P0Z3 Destruction of Rectum using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5P3Z3 Destruction of Rectum using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5P4Z3 Destruction of Rectum using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0D5Q0Z3 Destruction of Anus using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0D5Q3Z3 Destruction of Anus using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0D5Q4Z3 Destruction of Anus using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0DX80ZB Transfer Small Intestine to Bladder, Open Approach
+Add:         0DX80ZC Transfer Small Intestine to Right Ureter, Open Approach
+Add:         0DX80ZD Transfer Small Intestine to Left Ureter, Open Approach
+Add:         0DX80ZF Transfer Small Intestine to Bilateral Ureters, Open Approach
+Add:         0DX84ZB Transfer Small Intestine to Bladder, Percutaneous Endoscopic Approach
+Add:         0DX84ZC Transfer Small Intestine to Right Ureter, Percutaneous Endoscopic Approach
+Add:         0DX84ZD Transfer Small Intestine to Left Ureter, Percutaneous Endoscopic Approach
+Add:         0DX84ZF Transfer Small Intestine to Bilateral Ureters, Percutaneous Endoscopic Approach
+Add:         0DXE0ZB Transfer Large Intestine to Bladder, Open Approach
+Add:         0DXE4ZB Transfer Large Intestine to Bladder, Percutaneous Endoscopic Approach
+Add:         0F500Z3 Destruction of Liver using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F503Z3 Destruction of Liver using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F504Z3 Destruction of Liver using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F510Z3 Destruction of Right Lobe Liver using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F513Z3 Destruction of Right Lobe Liver using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F514Z3 Destruction of Right Lobe Liver using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F520Z3 Destruction of Left Lobe Liver using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F523Z3 Destruction of Left Lobe Liver using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F524Z3 Destruction of Left Lobe Liver using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F540Z3 Destruction of Gallbladder using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F543Z3 Destruction of Gallbladder using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F544Z3 Destruction of Gallbladder using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F550Z3 Destruction of Right Hepatic Duct using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F553Z3 Destruction of Right Hepatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F554Z3 Destruction of Right Hepatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F560Z3 Destruction of Left Hepatic Duct using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F563Z3 Destruction of Left Hepatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F564Z3 Destruction of Left Hepatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F570Z3 Destruction of Common Hepatic Duct using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F573Z3 Destruction of Common Hepatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F574Z3 Destruction of Common Hepatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F580Z3 Destruction of Cystic Duct using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F583Z3 Destruction of Cystic Duct using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F584Z3 Destruction of Cystic Duct using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F590Z3 Destruction of Common Bile Duct using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F593Z3 Destruction of Common Bile Duct using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F594Z3 Destruction of Common Bile Duct using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F5C0Z3 Destruction of Ampulla of Vater using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F5C3Z3 Destruction of Ampulla of Vater using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F5C4Z3 Destruction of Ampulla of Vater using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F5D0Z3 Destruction of Pancreatic Duct using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F5D3Z3 Destruction of Pancreatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F5D4Z3 Destruction of Pancreatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F5F0Z3 Destruction of Accessory Pancreatic Duct using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F5F3Z3 Destruction of Accessory Pancreatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F5F4Z3 Destruction of Accessory Pancreatic Duct using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0F5G0Z3 Destruction of Pancreas using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0F5G3Z3 Destruction of Pancreas using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0F5G4Z3 Destruction of Pancreas using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G500Z3 Destruction of Pituitary Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G503Z3 Destruction of Pituitary Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G504Z3 Destruction of Pituitary Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G510Z3 Destruction of Pineal Body using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G513Z3 Destruction of Pineal Body using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G514Z3 Destruction of Pineal Body using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G520Z3 Destruction of Left Adrenal Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G523Z3 Destruction of Left Adrenal Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G524Z3 Destruction of Left Adrenal Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G530Z3 Destruction of Right Adrenal Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G533Z3 Destruction of Right Adrenal Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G534Z3 Destruction of Right Adrenal Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G540Z3 Destruction of Bilateral Adrenal Glands using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G543Z3 Destruction of Bilateral Adrenal Glands using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G544Z3 Destruction of Bilateral Adrenal Glands using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G560Z3 Destruction of Left Carotid Body using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G563Z3 Destruction of Left Carotid Body using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G564Z3 Destruction of Left Carotid Body using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G570Z3 Destruction of Right Carotid Body using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G573Z3 Destruction of Right Carotid Body using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G574Z3 Destruction of Right Carotid Body using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G580Z3 Destruction of Bilateral Carotid Bodies using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G583Z3 Destruction of Bilateral Carotid Bodies using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G584Z3 Destruction of Bilateral Carotid Bodies using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G590Z3 Destruction of Para-aortic Body using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G593Z3 Destruction of Para-aortic Body using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G594Z3 Destruction of Para-aortic Body using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5B0Z3 Destruction of Coccygeal Glomus using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5B3Z3 Destruction of Coccygeal Glomus using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5B4Z3 Destruction of Coccygeal Glomus using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5C0Z3 Destruction of Glomus Jugulare using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5C3Z3 Destruction of Glomus Jugulare using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5C4Z3 Destruction of Glomus Jugulare using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5D0Z3 Destruction of Aortic Body using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5D3Z3 Destruction of Aortic Body using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5D4Z3 Destruction of Aortic Body using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5F0Z3 Destruction of Paraganglion Extremity using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5F3Z3 Destruction of Paraganglion Extremity using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5F4Z3 Destruction of Paraganglion Extremity using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5G0Z3 Destruction of Left Thyroid Gland Lobe using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5G3Z3 Destruction of Left Thyroid Gland Lobe using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5G4Z3 Destruction of Left Thyroid Gland Lobe using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5H0Z3 Destruction of Right Thyroid Gland Lobe using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5H3Z3 Destruction of Right Thyroid Gland Lobe using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5H4Z3 Destruction of Right Thyroid Gland Lobe using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5K0Z3 Destruction of Thyroid Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5K3Z3 Destruction of Thyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5K4Z3 Destruction of Thyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5L0Z3 Destruction of Right Superior Parathyroid Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5L3Z3 Destruction of Right Superior Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5L4Z3 Destruction of Right Superior Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5M0Z3 Destruction of Left Superior Parathyroid Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5M3Z3 Destruction of Left Superior Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5M4Z3 Destruction of Left Superior Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5N0Z3 Destruction of Right Inferior Parathyroid Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5N3Z3 Destruction of Right Inferior Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5N4Z3 Destruction of Right Inferior Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5P0Z3 Destruction of Left Inferior Parathyroid Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5P3Z3 Destruction of Left Inferior Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5P4Z3 Destruction of Left Inferior Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5Q0Z3 Destruction of Multiple Parathyroid Glands using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5Q3Z3 Destruction of Multiple Parathyroid Glands using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5Q4Z3 Destruction of Multiple Parathyroid Glands using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0G5R0Z3 Destruction of Parathyroid Gland using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0G5R3Z3 Destruction of Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0G5R4Z3 Destruction of Parathyroid Gland using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0H5T0Z3 Destruction of Right Breast using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0H5T3Z3 Destruction of Right Breast using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0H5U0Z3 Destruction of Left Breast using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0H5U3Z3 Destruction of Left Breast using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0H5V0Z3 Destruction of Bilateral Breast using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0H5V3Z3 Destruction of Bilateral Breast using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0NP003Z Removal of Infusion Device from Skull, Open Approach
+Add:         0NP033Z Removal of Infusion Device from Skull, Percutaneous Approach
+Add:         0NP043Z Removal of Infusion Device from Skull, Percutaneous Endoscopic Approach
+Add:         0NP0X3Z Removal of Infusion Device from Skull, External Approach
+Add:         0NW003Z Revision of Infusion Device in Skull, Open Approach
+Add:         0NW033Z Revision of Infusion Device in Skull, Percutaneous Approach
+Add:         0NW043Z Revision of Infusion Device in Skull, Percutaneous Endoscopic Approach
+Add:         0NW0X3Z Revision of Infusion Device in Skull, External Approach
+Add:         0V500Z3 Destruction of Prostate using Laser Interstitial Thermal Therapy, Open Approach
+Add:         0V503Z3 Destruction of Prostate using Laser Interstitial Thermal Therapy, Percutaneous Approach
+Add:         0V504Z3 Destruction of Prostate using Laser Interstitial Thermal Therapy, Percutaneous Endoscopic Approach
+Add:         0W9670Z Drainage of Neck with Drainage Device, Via Natural or Artificial Opening
+Add:         0W967ZX Drainage of Neck, Via Natural or Artificial Opening, Diagnostic
+Add:         0W967ZZ Drainage of Neck, Via Natural or Artificial Opening
+Add:         0W9680Z Drainage of Neck with Drainage Device, Via Natural or Artificial Opening Endoscopic
+Add:         0W968ZX Drainage of Neck, Via Natural or Artificial Opening Endoscopic, Diagnostic
+Add:         0W968ZZ Drainage of Neck, Via Natural or Artificial Opening Endoscopic
+Add:         3E033GR Introduction of Other Therapeutic Monoclonal Antibody into Peripheral Vein, Percutaneous Approach
+Add:         3E043GR Introduction of Other Therapeutic Monoclonal Antibody into Central Vein, Percutaneous Approach
+Add:         3E0V0GC Introduction of Other Therapeutic Substance into Bones, Open Approach
+Add:         3E0V4GC Introduction of Other Therapeutic Substance into Bones, Percutaneous Endoscopic Approach
+Add:         5A0222C Assistance with Cardiac Oxygenation, Supersaturated
+Delete:      5A0512C Extracorporeal Supersaturated Oxygenation, Intermittent
+Delete:      5A0522C Extracorporeal Supersaturated Oxygenation, Continuous
+Add:         BB34Z3Z Magnetic Resonance Imaging (MRI) of Bilateral Lungs using Hyperpolarized Xenon 129 (Xe-129)
+Delete:      D0Y0KZZ Laser Interstitial Thermal Therapy of Brain
+Delete:      D0Y1KZZ Laser Interstitial Thermal Therapy of Brain Stem
+Delete:      D0Y6KZZ Laser Interstitial Thermal Therapy of Spinal Cord
+Delete:      D0Y7KZZ Laser Interstitial Thermal Therapy of Peripheral Nerve
+Delete:      DBY0KZZ Laser Interstitial Thermal Therapy of Trachea
+Delete:      DBY1KZZ Laser Interstitial Thermal Therapy of Bronchus
+Delete:      DBY2KZZ Laser Interstitial Thermal Therapy of Lung
+Delete:      DBY5KZZ Laser Interstitial Thermal Therapy of Pleura
+Delete:      DBY6KZZ Laser Interstitial Thermal Therapy of Mediastinum
+Delete:      DBY7KZZ Laser Interstitial Thermal Therapy of Chest Wall
+Delete:      DBY8KZZ Laser Interstitial Thermal Therapy of Diaphragm
+Delete:      DDY0KZZ Laser Interstitial Thermal Therapy of Esophagus
+Delete:      DDY1KZZ Laser Interstitial Thermal Therapy of Stomach
+Delete:      DDY2KZZ Laser Interstitial Thermal Therapy of Duodenum
+Delete:      DDY3KZZ Laser Interstitial Thermal Therapy of Jejunum
+Delete:      DDY4KZZ Laser Interstitial Thermal Therapy of Ileum
+Delete:      DDY5KZZ Laser Interstitial Thermal Therapy of Colon
+Delete:      DDY7KZZ Laser Interstitial Thermal Therapy of Rectum
+Delete:      DDY8KZZ Laser Interstitial Thermal Therapy of Anus
+Delete:      DFY0KZZ Laser Interstitial Thermal Therapy of Liver
+Delete:      DFY1KZZ Laser Interstitial Thermal Therapy of Gallbladder
+Delete:      DFY2KZZ Laser Interstitial Thermal Therapy of Bile Ducts
+Delete:      DFY3KZZ Laser Interstitial Thermal Therapy of Pancreas
+Delete:      DGY0KZZ Laser Interstitial Thermal Therapy of Pituitary Gland
+Delete:      DGY1KZZ Laser Interstitial Thermal Therapy of Pineal Body
+Delete:      DGY2KZZ Laser Interstitial Thermal Therapy of Adrenal Glands
+Delete:      DGY4KZZ Laser Interstitial Thermal Therapy of Parathyroid Glands
+Delete:      DGY5KZZ Laser Interstitial Thermal Therapy of Thyroid
+Delete:      DMY0KZZ Laser Interstitial Thermal Therapy of Left Breast
+Delete:      DMY1KZZ Laser Interstitial Thermal Therapy of Right Breast
+Delete:      DVY0KZZ Laser Interstitial Thermal Therapy of Prostate
+Add:         X0HK3Q8 Insertion of Neurostimulator Lead into Sphenopalatine Ganglion, Percutaneous Approach, New Technology Group 8
+Add:         X0HQ3R8 Insertion of Neurostimulator Lead with Paired Stimulation System into Vagus Nerve, Percutaneous Approach, New Technology Group 8
+Add:         X0Z0X18 Computer-assisted Transcranial Magnetic Stimulation of Prefrontal Cortex, New Technology Group 8
+Add:         X2A7358 Intermittent Coronary Sinus Occlusion, Percutaneous Approach, New Technology Group 8
+Delete:      X2RF032 Replacement of Aortic Valve using Zooplastic Tissue, Rapid Deployment Technique, Open Approach, New Technology Group 2
+Delete:      X2RF332 Replacement of Aortic Valve using Zooplastic Tissue, Rapid Deployment Technique, Percutaneous Approach, New Technology Group 2
+Delete:      X2RF432 Replacement of Aortic Valve using Zooplastic Tissue, Rapid Deployment Technique, Percutaneous Endoscopic Approach, New Technology Group 2
+Add:         XF50X08 Destruction of Liver using Ultrasound-guided Cavitation, External Approach, New Technology Group 8
+Add:         XF51X08 Destruction of Right Lobe Liver using Ultrasound-guided Cavitation, External Approach, New Technology Group 8
+Add:         XF52X08 Destruction of Left Lobe Liver using Ultrasound-guided Cavitation, External Approach, New Technology Group 8
+Delete:      XHRPXL2 Replacement of Skin using Porcine Liver Derived Skin Substitute, External Approach, New Technology Group 2
+Delete:      XK02303 Introduction of Concentrated Bone Marrow Aspirate into Muscle, Percutaneous Approach, New Technology Group 3
+Add:         XKUC068 Supplement Upper Spine Bursa and Ligament with Posterior Vertebral Tether, Open Approach, New Technology Group 8
+Add:         XKUD068 Supplement Lower Spine Bursa and Ligament with Posterior Vertebral Tether, Open Approach, New Technology Group 8
+Add:         XNH6058 Insertion of Internal Fixation Device with Tulip Connector into Right Pelvic Bone, Open Approach, New Technology Group 8
+Add:         XNH6358 Insertion of Internal Fixation Device with Tulip Connector into Right Pelvic Bone, Percutaneous Approach, New Technology Group 8
+Add:         XNH7058 Insertion of Internal Fixation Device with Tulip Connector into Left Pelvic Bone, Open Approach, New Technology Group 8
+Add:         XNH7358 Insertion of Internal Fixation Device with Tulip Connector into Left Pelvic Bone, Percutaneous Approach, New Technology Group 8
+Delete:      XRG0092 Fusion of Occipital-cervical Joint using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRG00F3 Fusion of Occipital-cervical Joint using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRG1092 Fusion of Cervical Vertebral Joint using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRG10F3 Fusion of Cervical Vertebral Joint using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRG2092 Fusion of 2 or more Cervical Vertebral Joints using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRG20F3 Fusion of 2 or more Cervical Vertebral Joints using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRG4092 Fusion of Cervicothoracic Vertebral Joint using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRG40F3 Fusion of Cervicothoracic Vertebral Joint using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRG6092 Fusion of Thoracic Vertebral Joint using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRG60F3 Fusion of Thoracic Vertebral Joint using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRG7092 Fusion of 2 to 7 Thoracic Vertebral Joints using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRG70F3 Fusion of 2 to 7 Thoracic Vertebral Joints using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRG8092 Fusion of 8 or more Thoracic Vertebral Joints using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRG80F3 Fusion of 8 or more Thoracic Vertebral Joints using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRGA092 Fusion of Thoracolumbar Vertebral Joint using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRGA0F3 Fusion of Thoracolumbar Vertebral Joint using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRGB092 Fusion of Lumbar Vertebral Joint using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRGB0F3 Fusion of Lumbar Vertebral Joint using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRGC092 Fusion of 2 or more Lumbar Vertebral Joints using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRGC0F3 Fusion of 2 or more Lumbar Vertebral Joints using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Delete:      XRGD092 Fusion of Lumbosacral Joint using Nanotextured Surface Interbody Fusion Device, Open Approach, New Technology Group 2
+Delete:      XRGD0F3 Fusion of Lumbosacral Joint using Radiolucent Porous Interbody Fusion Device, Open Approach, New Technology Group 3
+Add:         XRGE058 Fusion of Right Sacroiliac Joint using Internal Fixation Device with Tulip Connector, Open Approach, New Technology Group 8
+Add:         XRGE358 Fusion of Right Sacroiliac Joint using Internal Fixation Device with Tulip Connector, Percutaneous Approach, New Technology Group 8
+Add:         XRGF058 Fusion of Left Sacroiliac Joint using Internal Fixation Device with Tulip Connector, Open Approach, New Technology Group 8
+Add:         XRGF358 Fusion of Left Sacroiliac Joint using Internal Fixation Device with Tulip Connector, Percutaneous Approach, New Technology Group 8
+Add:         XRHB018 Insertion of Posterior Spinal Motion Preservation Device into Lumbar Vertebral Joint, Open Approach, New Technology Group 8
+Add:         XRHD018 Insertion of Posterior Spinal Motion Preservation Device into Lumbosacral Joint, Open Approach, New Technology Group 8
+Add:         XRRG0L8 Replacement of Right Knee Joint with Synthetic Substitute, Lateral Meniscus, Open Approach, New Technology Group 8
+Add:         XRRG0M8 Replacement of Right Knee Joint with Synthetic Substitute, Medial Meniscus, Open Approach, New Technology Group 8
+Add:         XRRH0L8 Replacement of Left Knee Joint with Synthetic Substitute, Lateral Meniscus, Open Approach, New Technology Group 8
+Add:         XRRH0M8 Replacement of Left Knee Joint with Synthetic Substitute, Medial Meniscus, Open Approach, New Technology Group 8
+Add:         XW01318 Introduction of Daratumumab and Hyaluronidase-fihj into Subcutaneous Tissue, Percutaneous Approach, New Technology Group 8
+Add:         XW01348 Introduction of Teclistamab Antineoplastic into Subcutaneous Tissue, Percutaneous Approach, New Technology Group 8
+Add:         XW020D8 Introduction of Engineered Allogeneic Thymus Tissue into Muscle, Open Approach, New Technology Group 8
+Add:         XW03308 Introduction of Spesolimab Monoclonal Antibody into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW03358 Introduction of Mosunetuzumab Antineoplastic into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW03368 Introduction of Afamitresgene Autoleucel Immunotherapy into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW03378 Introduction of Tabelecleucel Immunotherapy into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW03388 Introduction of Treosulfan into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Delete:      XW03392 Introduction of Defibrotide Sodium Anticoagulant into Peripheral Vein, Percutaneous Approach, New Technology Group 2
+Add:         XW03398 Introduction of Inebilizumab-cdon into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Delete:      XW033A3 Introduction of Bezlotoxumab Monoclonal Antibody into Peripheral Vein, Percutaneous Approach, New Technology Group 3
+Add:         XW04308 Introduction of Spesolimab Monoclonal Antibody into Central Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW04358 Introduction of Mosunetuzumab Antineoplastic into Central Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW04368 Introduction of Afamitresgene Autoleucel Immunotherapy into Central Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW04378 Introduction of Tabelecleucel Immunotherapy into Central Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW04388 Introduction of Treosulfan into Central Vein, Percutaneous Approach, New Technology Group 8
+Delete:      XW04392 Introduction of Defibrotide Sodium Anticoagulant into Central Vein, Percutaneous Approach, New Technology Group 2
+Add:         XW04398 Introduction of Inebilizumab-cdon into Central Vein, Percutaneous Approach, New Technology Group 8
+Delete:      XW043A3 Introduction of Bezlotoxumab Monoclonal Antibody into Central Vein, Percutaneous Approach, New Technology Group 3
+Add:         XW0DX38 Introduction of Maribavir Anti-infective into Mouth and Pharynx, External Approach, New Technology Group 8
+Add:         XW0G738 Introduction of Maribavir Anti-infective into Upper GI, Via Natural or Artificial Opening, New Technology Group 8
+Add:         XW0H738 Introduction of Maribavir Anti-infective into Lower GI, Via Natural or Artificial Opening, New Technology Group 8
+Add:         XW0H7X8 Introduction of Broad Consortium Microbiota-based Live Biotherapeutic Suspension into Lower GI, Via Natural or Artificial Opening, New Technology Group 8
+Add:         XW133B8 Transfusion of Betibeglogene Autotemcel into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW133C8 Transfusion of Omidubicel into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW133F8 Transfusion of OTL-103 into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW133G8 Transfusion of OTL-200 into Peripheral Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW143B8 Transfusion of Betibeglogene Autotemcel into Central Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW143C8 Transfusion of Omidubicel into Central Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW143F8 Transfusion of OTL-103 into Central Vein, Percutaneous Approach, New Technology Group 8
+Add:         XW143G8 Transfusion of OTL-200 into Central Vein, Percutaneous Approach, New Technology Group 8
+Add:         XXE0X48 Measurement of Brain Electrical Activity, Computer-aided Semiologic Analysis, New Technology Group 8
+Add:         XXE3X58 Measurement of Coronary Artery Flow, Quantitative Flow Ratio Analysis, New Technology Group 8
+Add:         XXE3X68 Measurement of Coronary Artery Flow, Computer-aided Valve Modeling and Notification, New Technology Group 8
+Add:         XXE5X38 Measurement of Infection, Whole Blood Reverse Transcription and Quantitative Real-time Polymerase Chain Reaction, New Technology Group 8
+Add:         XY0YX28 Extracorporeal Introduction of Taurolidine Anti-infective and Heparin Anticoagulant, New Technology Group 8
+
+Codes
+  78229 codes in icd10pcs_codes_2022.txt
+  78496 codes in icd10pcs_codes_2023.txt
+    331 additions
+     64 deletions
+      0 revisions

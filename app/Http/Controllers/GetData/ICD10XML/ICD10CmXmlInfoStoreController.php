@@ -21,8 +21,7 @@ class ICD10CmXmlInfoStoreController extends Controller
 
         if (!empty($icd10release)) {
             $filePath = 'DataSets/Data/ICD10CM/icd10cm_'.$icd10release->releaseYear.'.xml';
-            $filePath = Storage::path($filePath);
-
+            $filePath = storage_path($filePath);
             $icdObject = simplexml_load_file($filePath);
 
             $icd10release->update([
