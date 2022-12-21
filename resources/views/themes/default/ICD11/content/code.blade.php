@@ -92,7 +92,14 @@
     <strong class="text-amber-800">Codes:</strong>
     <div class="m-4">
         @foreach ($child as $record)
-        <li><a href="{{ route('icd11.code.index',[
+        <li>
+            @if (!empty($record->code))
+            {{ $record->code }} . 
+            @endif 
+            @if ($record->codeRange)
+            {{ $record->codeRange }} .
+            @endif
+        <a href="{{ route('icd11.code.index',[
             'releaseYear'=> $record->releaseYear,
             'liner_id' => $record->liner_id
             ]) }}">
