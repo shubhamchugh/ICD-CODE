@@ -44,8 +44,8 @@ class HomePageController extends Controller
         })
         ->get();
 
-        SEOTools::setTitle('Home Package');
-        SEOTools::setDescription('This is my page description from Package');
+        SEOTools::setTitle('ICD 11 MMS | ICD 10 CM | Medical Coding Tools');
+        SEOTools::setDescription('Find ICD 11 MMS, ICD 10 CM Codes with all inclusion, exclusion, code history, related codes, synonyms, rules & guidelines. ');
         
         if (!$icd_11_release->isEmpty()) {
             foreach ($icd_11_release as  $icd_11_release_data) {

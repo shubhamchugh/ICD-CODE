@@ -3,23 +3,19 @@
 <div class="container xl:max-w-7xl mx-auto px-4 py-8">
     <div class="m-4">
         <h1 class="text-center text-4xl">@if ($availableRecords->code)
-            {{ $availableRecords->code }}
+            {{ $availableRecords->code }} - 
             @endif
             {{ $availableRecords->title }}
-
-            @if ($availableRecords->classKind)
-            [ {{ $availableRecords->classKind }} ]
-            @endif
-
+            [ ICD 11 MMS
             @if ($availableRecords->releaseYear)
             {{ $availableRecords->releaseYear }}
-            @endif
+            @endif ]
         </h1>
     </div>
 
     <div class="lg:mx-20 my-10 px-10 py-10 mx-auto rounded-xl shadow-lg">
 
-        <strong>{{ $availableRecords->title }}</strong>
+    <strong>The ICD 10 Code {{ $availableRecords->code ?? ""}}  is a WHO Classified code for {{ $availableRecords->title ?? ""}}</strong>
 
 
         @if ($availableRecords->definition)
@@ -99,7 +95,7 @@
             @if ($record->codeRange)
             {{ $record->codeRange }} .
             @endif
-        <a href="{{ route('icd11.code.index',[
+        <a class="hover:underline hover:text-blue-900 text-blue-700" href="{{ route('icd11.code.index',[
             'releaseYear'=> $record->releaseYear,
             'liner_id' => $record->liner_id
             ]) }}">

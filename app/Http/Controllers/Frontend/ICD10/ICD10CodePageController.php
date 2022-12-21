@@ -45,11 +45,14 @@ class ICD10CodePageController extends Controller
 
        $code_title = (!empty($availableRecords->title)) ? $availableRecords->title : Null;
 
-        SEOTools::setTitle($releaseYear. ' ICD-10 CM Codes for '. $code_title);
-        SEOTools::setDescription($releaseYear. ' ICD-10 CM Codes for '. $code_title);
+       $code = (!empty($availableRecords->code)) ? $availableRecords->code : $availableRecords->codeRange;
+
+       SEOTools::setTitle($code.' '.$code_title . ' ICD 10 Codes '. $releaseYear);
+       SEOTools::setDescription('ICD-10 Code for '.$code_title.'. Inclusion, exclusion and all ICD 10 '.$code.' history, related codes, synonyms, rules & guidelines.');
 
         return view('themes.default.ICD10.content.code',[
             'child' => $child,
+            'availableRecords' => $availableRecords,
         ]);
   }
 }

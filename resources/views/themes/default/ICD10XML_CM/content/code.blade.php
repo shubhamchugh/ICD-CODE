@@ -9,7 +9,7 @@
         </h1>
     </div>
     <div class="lg:mx-20 my-10 px-10 py-10 mx-auto rounded-xl shadow-lg">
-        <strong> {{ $codeDetails->title ?? "" }} </strong>
+        The ICD 10 Code {{ $codeDetails->code ?? "" }} is relevant to :  <strong>{{ $codeDetails->title ?? ""}}  </strong>
 
         @if (!empty($codeDetails->definition))
         <h2 class="m-4"> <strong class="text-blue-800">Definition:</strong> {{ $codeDetails->definition }}</h2>
@@ -94,16 +94,6 @@
         </div>
         @endif
     </div>
-
-    @if (!empty($history_Codes))
-    <strong class="text-amber-800">Code History:</strong>
-    @foreach ($history_Codes as $h_code)
-    <div class="">
-       <li> <a href="{{ route('icd10xml.code.index',['releaseYear'=> $h_code->releaseYear,'slug' => $h_code->slug ]) }}">{{ $h_code->code }} in {{ $h_code->releaseYear}}</a></li>
-    </div>
-    @endforeach
-    
-@endif
 </div>
 
 
@@ -137,4 +127,19 @@
     @endforeach
 </div>
 @endif
+
+    <div class="container xl:max-w-7xl mx-auto px-4">
+       <p> This is the 10th Revision (ICD-10)-WHO Version for {{ $record->releaseYear ?? "" }}
+        International Statistical Classification of Diseases and Related Health Problems.</p>
+    </div>
+
+    @if (!empty($history_Codes))
+    <div class="container xl:max-w-7xl mx-auto px-4 py-8">
+        <strong class="text-amber-800">Code History:</strong>
+    @foreach ($history_Codes as $h_code)
+       <li>{{ $h_code->code }} in <a class="underline text-blue-700 hover:text-blue-900" href="{{ route('icd10xml.code.index',['releaseYear'=> $h_code->releaseYear,'slug' => $h_code->slug ]) }}">{{ $h_code->releaseYear}}</a></li>
+    @endforeach
+    </div>
+    @endif
+
 @endsection

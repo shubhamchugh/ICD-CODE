@@ -32,15 +32,20 @@ class ICD10CM_XML_CodePageController extends Controller
                 })
                 ->first();
 
-            $history_Codes = Icd10CmXmlRecord::where('code',$codeDetails->code)->get();    
-            
+            $history_Codes = Icd10CmXmlRecord::where('code', $codeDetails->code)->get();
+
 
             $availableRecords = Icd10CmXmlRecord::where('parent_id', $codeDetails->id)
-                       ->where('language', LaravelLocalization::getCurrentLocale())
-                       ->get();
+                    ->where('language', LaravelLocalization::getCurrentLocale())
+                    ->get();
 
-            SEOTools::setTitle($releaseYear .' ['. $codeDetails->code .'] ICD-10-CM Codes for '. $codeDetails->title);
-            SEOTools::setDescription('ICD CODE LIST');
+            
+            $code_title = (!empty($codeDetails->title)) ? $codeDetails->title : null;
+
+            $code = (!empty($codeDetails->code)) ? $codeDetails->code : null;
+
+            SEOTools::setTitle($code.' '.$code_title . ' ICD 10 Codes'. $releaseYear);
+            SEOTools::setDescription('ICD 10 Code for '.$code_title.'. Inclusion, exclusion and all ICD 10 '.$code.' history, related codes, synonyms, rules & guidelines.');
 
             return view('themes.default.ICD10XML_CM.content.code', [
                 'availableRecords' => $availableRecords,
@@ -50,7 +55,7 @@ class ICD10CM_XML_CodePageController extends Controller
         }
 
         SEOTools::setTitle($releaseYear.' Free ICD-10-CM Codes');
-        SEOTools::setDescription('ICD CODE LIST');
+        SEOTools::setDescription('ICD 10 Code for '.$releaseYear.'. Inclusion, exclusion, history, related codes, synonyms, rules & guidelines.');
 
         return view('themes.default.ICD10XML_CM.content.code', [
             'chapterAvailable' => $chapterAvailable,

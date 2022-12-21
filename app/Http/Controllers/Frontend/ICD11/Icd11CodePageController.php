@@ -44,11 +44,13 @@ class Icd11CodePageController extends Controller
         $child = Icd11Record::where('parent_id',$availableRecords->id)
         ->where('language',LaravelLocalization::getCurrentLocale())
         ->get();
-
+        
         $code_title = (!empty($availableRecords->title)) ? $availableRecords->title : Null;
-
-        SEOTools::setTitle($releaseYear. ' ICD-11 Codes for '. $code_title);
-        SEOTools::setDescription($releaseYear. ' ICD-11 Codes for '. $code_title);
+        
+        $code = (!empty($availableRecords->code)) ? $availableRecords->code : $availableRecords->codeRange;
+        
+        SEOTools::setTitle($code.' '.$code_title . ' ICD 11 Codes '. $releaseYear);
+        SEOTools::setDescription('ICD-11 Code for '.$code_title.'. Inclusion, exclusion and all ICD 11 '.$code.' history, related codes, synonyms, rules & guidelines.');
 
         return view('themes.default.ICD11.content.code',[
             'child' => $child,
