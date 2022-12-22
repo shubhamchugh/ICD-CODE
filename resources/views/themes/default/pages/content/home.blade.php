@@ -3,7 +3,7 @@
 @section('content')
 <div class="container xl:max-w-7xl mx-auto px-4 py-8">
 <!--SEARCH BAR -->
- <p class="text-xl p-2">Find ICD-10 codes by name, description or synonym.</p>
+ <p class="text-xl p-2">Find ICD-10/ICD-11 codes by name, description or synonym.</p>
     <form>
         <div class="flex">
             <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
@@ -34,13 +34,12 @@
         </div>
     </form>
     <hr class="my-4 mx-auto h-1 bg-gray-400 rounded border-0 lg:my-8 dark:bg-gray-700">
-    <h1 class="text-3xl">ICD-11 FREE MEDICAL CODING REFERENCE 2022 - 2023</h1>
+    <h1 class="text-3xl">ICD-11/ICD-10 FREE MEDICAL CODING REFERENCE</h1>
     
-    <p class="py-2">ICD List is a reference website of ICD-10-CM and ICD-10-PCS codes, related medical coding guidelines and billing information. Our ICD-10 data is updated with the latest 96,400+ ICD-10-CM codes and the 79,300+ ICD-10 procedure codes from the Centers for Medicare and Medicaid Services (CMS).</p>
+    <p class="py-2">ICD coding is a powerful medical billing tool that provides ICD-10 CM and ICD-11 MMS codes. Our data includes all versions of ICD 10 CM from 2008 to 2023 and ICD 11 MMS 2018 -2022 versions. 
+    </p>
 
-<p class="py-2">ICD-10 information is easily accessible with our powerful search tools, code converters, browsable indexes, tables and medical coding guides.</p>
-
-<p class="py-2">Our knowledge graph includes helpful medical coding information like Code Edits, Code first, with, or also, Inclusion and Exclusion terms, Diagnostic Related Groups (DRG), Present on Admission Exempt (POA), Synonyms, Table of Drugs, Table of Neoplasms, Quality Payment Program Measures and Information for Patients.</p>
+<p class="py-2">One can easily search the code via disease name or can find the disease with it’s all inclusion and exclusion, code history etc. </p>
 
 <hr class="my-4 mx-auto h-1 bg-gray-400 rounded border-0 lg:my-8 dark:bg-gray-700">
 

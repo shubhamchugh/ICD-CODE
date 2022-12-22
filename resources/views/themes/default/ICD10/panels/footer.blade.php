@@ -118,7 +118,7 @@
         </div>
       </div> --}}
       <span class="text-xs text-left font-light bg-gray-200 text-gray-500 px-5 py-12 mx-auto max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-20">
-          All contents of this website are provided on an "as is" and "as available" basis without warranty of any kind for general information purposes only. The contents of the ICD List website are for informational purposes only. Reliance on any information provided by the ICD List website or other visitors to this website is solely at your own risk. If you think you may have a medical emergency, please call your doctor or 911 immediately.
+        This website's contents are provided "as-is" and "as readily available" without any warranty. They are intended to be used for general information purposes only. The contents of the ICD Coding website are for informational purposes only. You are solely responsible for any information you rely on from the ICD Coding website, or other visitors to this site. You should immediately call your doctor if you suspect you might have a medical emergency.
       </span>
     </footer>
     
