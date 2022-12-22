@@ -22,7 +22,7 @@
                 </button>
                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 z-30 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48" style="display: none">
                     <div class="px-2 py-2 bg-white rounded-md shadow">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    @foreach($lang_available as $localeCode => $properties)
                         <a rel="alternate" hreflang="{{ $localeCode }}" class="block px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 hover:text-blue-600 focus:outline-none focus:shadow-outline" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">  {{ $properties['native'] }} </a>
                     @endforeach
                     </div>
