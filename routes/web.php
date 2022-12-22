@@ -65,6 +65,15 @@ Route::domain('{releaseYear}.'.request()->server('SERVER_NAME'))->group(function
 	Route::get('ICD10CM/{slug?}',[ICD10CM_XML_CodePageController::class,'index'])->name('icd10xml.code.index');
 });
 
+
+Route::group([
+	'domain' => '{releaseYear}.'.request()->server('SERVER_NAME'),
+	'where' => ['releaseYear' => '2023|2022|2021|2020|2019|2018|2017|2016|2015|2014|2010|2008'],
+	], function() {
+		Route::get('ICD11',[Icd11CodePageController::class,'index'])->where('liner_id', '[\w\s\-_\/]+')->name('icd11.code.footer');
+});
+
+
 // With the localize middleware, this route cannot be reached without language subdomain
 Route::group([
 	'domain' => '{releaseYear}.'.request()->server('SERVER_NAME'),
@@ -75,5 +84,6 @@ Route::group([
 		Route::get('/',[HomePageController::class,'index'])->name('year.home.index');
 		Route::get('ICD11/{liner_id?}',[Icd11CodePageController::class,'index'])->where('liner_id', '[\w\s\-_\/]+')->name('icd11.code.index');
 });
+
 
 

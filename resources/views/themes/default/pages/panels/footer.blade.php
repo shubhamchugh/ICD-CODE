@@ -55,26 +55,26 @@
               </li>
             </ul>
           </div>
-          {{-- <div class="mt-12 md:mt-0">
+          <div class="mt-12 md:mt-0">
             <h3 class="text-xs font-semibold tracking-wider text-blue-600 uppercase">ICD 11 MMS CODE</h3>
             <ul role="list" class="mt-4 space-y-4">
               <li>
-                <a href="{{ route('icd11.code.index',['releaseYear' => '2022']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2022 ICD 11 MMS </a>
+                <a href="{{ route('icd11.code.footer',['releaseYear' => '2022']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2022 ICD 11 MMS </a>
               </li>
               <li>
-                <a href="{{ route('icd11.code.index',['releaseYear' => '2021']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2021 ICD 11 MMS </a>
+                <a href="{{ route('icd11.code.footer',['releaseYear' => '2021']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2021 ICD 11 MMS </a>
               </li>
               <li>
-                <a href="{{ route('icd11.code.index',['releaseYear' => '2020']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2020 ICD 11 MMS </a>
+                <a href="{{ route('icd11.code.footer',['releaseYear' => '2020']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2020 ICD 11 MMS </a>
               </li>
               <li>
-                <a href="{{ route('icd11.code.index',['releaseYear' => '2019']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2019 ICD 11 MMS </a>
+                <a href="{{ route('icd11.code.footer',['releaseYear' => '2019']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2019 ICD 11 MMS </a>
               </li>
               <li>
-                <a href="{{ route('icd11.code.index',['releaseYear' => '2018']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2018 ICD 11 MMS </a>
+                <a href="{{ route('icd11.code.footer',['releaseYear' => '2018']) }}" class="text-sm font-normal text-gray-500 hover:text-gray-900"> 2018 ICD 11 MMS </a>
               </li>
             </ul>
-          </div> --}}
+          </div>
 
         </div>
       </div>
