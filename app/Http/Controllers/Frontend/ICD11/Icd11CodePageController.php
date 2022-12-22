@@ -50,7 +50,7 @@ class Icd11CodePageController extends Controller
         $code = (!empty($availableRecords->code)) ? $availableRecords->code : $availableRecords->codeRange;
         
         SEOTools::setTitle('ICD 11 Code: '. $code.' '.$code_title .'-'.$releaseYear);
-        SEOTools::setDescription('ICD-11 Code for '.$code_title.'. Inclusion, exclusion and all ICD 11 '.$code.' history, related codes, synonyms, rules & guidelines.');
+        SEOTools::setDescription('ICD-11 '.$releaseYear.' Code for '.$code_title.'. Inclusion, exclusion and all ICD 11 '.$code.' history, related codes, synonyms, rules & guidelines.');
 
         return view('themes.default.ICD11.content.code',[
             'child' => $child,

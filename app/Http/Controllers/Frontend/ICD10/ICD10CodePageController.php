@@ -48,7 +48,7 @@ class ICD10CodePageController extends Controller
        $code = (!empty($availableRecords->code)) ? $availableRecords->code : $availableRecords->codeRange;
 
        SEOTools::setTitle('ICD 10 Code: '.$code.' '.$code_title . '-'. $releaseYear);
-       SEOTools::setDescription('ICD-10 Code for '.$code_title.'. Inclusion, exclusion and all ICD 10 '.$code.' history, related codes, synonyms, rules & guidelines.');
+       SEOTools::setDescription('ICD-10 '.$releaseYear.' Code for '.$code_title.'. Inclusion, exclusion and all ICD 10 '.$code.' history, related codes, synonyms, rules & guidelines.');
 
         return view('themes.default.ICD10.content.code',[
             'child' => $child,
